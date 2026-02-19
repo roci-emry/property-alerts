@@ -243,18 +243,108 @@ export default function PropertyAlerts() {
             <p style={{ color: '#8892b0' }}>No listings found. Waiting for email alerts...</p>
           </div>
         ) : (
-          <div style={{ display: 'grid', gap: '15px' }}>
+          <div style={{ display: 'grid', gap: '15px', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))' }}>
             {filteredListings.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded)).map(listing => (
               <div key={listing.id} style={{
                 background: listing.viewed 
                   ? 'rgba(10, 25, 47, 0.5)' 
                   : 'linear-gradient(135deg, rgba(10, 25, 47, 0.9) 0%, rgba(17, 34, 64, 0.9) 100%)',
-                padding: '20px',
                 borderRadius: '12px',
                 border: `1px solid ${listing.viewed ? 'rgba(136, 146, 176, 0.2)' : 'rgba(0, 243, 255, 0.3)'}`,
-                opacity: listing.viewed ? 0.7 : 1
+                opacity: listing.viewed ? 0.7 : 1,
+                overflow: 'hidden'
               }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px' }}>
+                {/* Property Image */}
+                <div style={{
+                  width: '100%',
+                  height: '200px',
+                  background: listing.imageUrl 
+                    ? `url(${listing.imageUrl}) center/cover no-repeat`
+                    : 'linear-gradient(135deg, #1a2744 0%, #0a1628 100%)',
+                  position: 'relative'
+                }}>
+                  {!listing.imageUrl && (
+                    <div style={{
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      color: '#8892b0',
+                      fontSize: '14px'
+                    }}>
+                      🏠 No Image
+                    </div>
+                  )}
+                  <div style={{
+                    position: 'absolute',
+                    top: '10px',
+                    left: '10px',
+                    display: 'flex',
+                    gap: '8px'
+                  }}>
+                    <span style={{
+                      padding: '4px 10px',
+                      borderRadius: '4px',
+                      fontSize: '11px',
+                      background: listing.source === 'Zillow' ? 'rgba(0, 116, 228, 0.9)' :
+                                  listing.source === 'Redfin' ? 'rgba(165, 20, 35, 0.9)' :
+                                  'rgba(0, 243, 255, 0.9)',
+                      color: '#fff',
+                      fontWeight: '600'
+                    }}>
+                      {listing.source}
+                    </span>
+                    {!listing.viewed && (
+                      <span style={{
+                        padding: '4px 10px',
+                        borderRadius: '4px',
+                        fontSize: '11px',
+                        background: '#00ff88',
+                        color: '#0a0e27',
+                        fontWeight: '600'
+                      }}>
+                        NEW
+                      </span>
+                    )}
+                  </div>
+                  <div style={{
+                    position: 'absolute',
+                    bottom: '10px',
+                    right: '10px',
+                    padding: '8px 16px',
+                    background: 'rgba(0,0,0,0.8)',
+                    borderRadius: '6px'
+                  }}>
+                    <p style={{ margin: 0, fontSize: '20px', fontWeight: '700', color: '#00f3ff' }}>
+                      ${listing.price?.toLocaleString()}
+                    </p>
+                  </div>
+                </div>
+                
+                <div style={{ padding: '20px' }}>
+                  <h3 style={{ margin: '0 0 8px 0', color: '#ccd6f6', fontSize: '18px', fontWeight: '600' }}>
+                    {listing.address}
+                  </h3>
+                  <p style={{ margin: '0 0 15px 0', color: '#8892b0', fontSize: '14px' }}>
+                    {listing.city}, {listing.state} {listing.zip}
+                  </p>
+                  
+                  <div style={{ display: 'flex', gap: '15px', marginBottom: '15px', padding: '12px', background: 'rgba(0,0,0,0.3)', borderRadius: '8px' }}>
+                    <div style={{ textAlign: 'center' }}>
+                      <p style={{ margin: '0 0 2px 0', color: '#8892b0', fontSize: '11px' }}>BEDS</p>
+                      <p style={{ margin: 0, color: '#ccd6f6', fontSize: '16px', fontWeight: '600' }}>{listing.beds || '-'}</p>
+                    </div>
+                    <div style={{ textAlign: 'center' }}>
+                      <p style={{ margin: '0 0 2px 0', color: '#8892b0', fontSize: '11px' }}>BATHS</p>
+                      <p style={{ margin: 0, color: '#ccd6f6', fontSize: '16px', fontWeight: '600' }}>{listing.baths || '-'}</p>
+                    </div>
+                    <div style={{ textAlign: 'center' }}>
+                      <p style={{ margin: '0 0 2px 0', color: '#8892b0', fontSize: '11px' }}>SQFT</p>
+                      <p style={{ margin: 0, color: '#ccd6f6', fontSize: '16px', fontWeight: '600' }}>{listing.sqft?.toLocaleString() || '-'}</p>
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '10px' }}>
                   <div>
                     <div style={{ display: 'flex', gap: '10px', marginBottom: '8px' }}>
                       <span style={{

@@ -73,6 +73,48 @@ def parse_sqft(text):
         return int(match.group(1))
     return None
 
+def extract_image_url(body, source):
+    """Extract the main property image URL from email"""
+    image_url = None
+    
+    # Look for image URLs in the email body
+    if source == 'Zillow':
+        # Zillow image patterns
+        match = re.search(r'https://photos\.zillowstatic\.com/[^\s<>"\']+\.jpg', body, re.IGNORECASE)
+        if match:
+            image_url = match.group(0)
+    elif source == 'Redfin':
+        # Redfin image patterns
+        match = re.search(r'https://ssl\.cdn-redfin\.com/[^\s<>"\']+\.jpg', body, re.IGNORECASE)
+        if not match:
+            match = re.search(r'https://[\w\-]+\.redfin\.com/[^\s<>"\']+\.jpg', body, re.IGNORECASE)
+        if match:
+            image_url = match.group(0)
+    elif source == 'Realtor.com':
+        # Realtor.com image patterns
+        match = re.search(r'https://ap\.rcdn\.com/[^\s<>"\']+\.jpg', body, re.IGNORECASE)
+        if match:
+            image_url = match.group(0)
+    
+    # Generic image URL pattern fallback
+    if not image_url:
+        # Look for any image URL that looks like a property photo
+        generic_patterns = [
+            r'(https?://[^\s<>"\']+\.(?:jpg|jpeg|png))',
+            r'(https?://[^\s<>"\']+/photos/[^\s<>"\']+)',
+            r'(https?://[^\s<>"\']+/_next/image[^\s<>"\']+)'
+        ]
+        for pattern in generic_patterns:
+            match = re.search(pattern, body, re.IGNORECASE)
+            if match:
+                potential_url = match.group(1)
+                # Filter out tiny icons and logos
+                if not any(x in potential_url.lower() for x in ['logo', 'icon', 'button', 'arrow', 'social']):
+                    image_url = potential_url
+                    break
+    
+    return image_url
+
 def parse_address(subject, body):
     """Extract address from email"""
     # Common patterns in listing emails
@@ -129,7 +171,8 @@ def parse_listing_email(msg, source):
         'sqft': parse_sqft(full_text),
         'dateAdded': datetime.now().isoformat(),
         'viewed': False,
-        'url': extract_url(body, source)
+        'url': extract_url(body, source),
+        'imageUrl': extract_image_url(body, source)
     }
     
     return listing
