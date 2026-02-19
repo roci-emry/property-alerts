@@ -1,1 +1,7 @@
-/** @type {import(next).NextConfig} */\nconst nextConfig = {\n  output: "'export'",\n  distDir: "'dist'",\n}\nmodule.exports = nextConfig
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  distDir: 'dist',
+}
+
+module.exports = nextConfig
