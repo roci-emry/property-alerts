@@ -16,13 +16,31 @@ export default function PropertyAlerts() {
     loadListings();
   }, []);
 
-  function loadListings() {
-    const saved = localStorage.getItem('propertyListings');
-    if (saved) {
-      const data = JSON.parse(saved);
-      setListings(data.listings || []);
-      setLastScanned(data.lastScanned);
-      calculateStats(data.listings || []);
+  async function loadListings() {
+    try {
+      // Fetch from the JSON file (populated by scraper)
+      const response = await fetch('/data/listings.json');
+      if (response.ok) {
+        const data = await response.json();
+        setListings(data.listings || []);
+        setLastScanned(data.lastScanned);
+        calculateStats(data.listings || []);
+        
+        // Also save to localStorage for viewed tracking
+        const saved = localStorage.getItem('propertyListings');
+        if (saved) {
+          const savedData = JSON.parse(saved);
+          // Merge viewed status from localStorage
+          const merged = data.listings.map(listing => {
+            const savedListing = savedData.listings?.find(l => l.id === listing.id);
+            return savedListing ? { ...listing, viewed: savedListing.viewed } : listing;
+          });
+          setListings(merged);
+          calculateStats(merged);
+        }
+      }
+    } catch (e) {
+      console.error('Failed to load listings:', e);
     }
   }
 
