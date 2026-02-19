@@ -21,14 +21,16 @@
       "id": "Zillow_<A5.A7.38338.26587996@i-0ae648ac0508f0680.mta2vrest.sd.prd.sparkpost>",
       "source": "Zillow",
       "subject": "Welcome to Zillow",
-      "address": "Welcome to Zillow",
+      "address": "Welcome to",
       "price": null,
       "beds": null,
       "baths": null,
       "sqft": null,
       "dateAdded": "2026-02-19T17:15:09.886164",
       "viewed": false,
-      "url": "https://www.zillow.com"
+      "url": "https://www.zillow.com",
+      "imageUrl": "https://www.zillowstatic.com/bedrock/app/uploads/sites/36/2024/02/zillow.png",
+      "emailDate": "2026-02-19T21:49:22+00:00"
     },
     {
       "id": "Redfin_<0101019c77e40ed0-6f4f913a-f9f9-432a-9b7d-afe36c10cc9e-000000@us-west-2.amazonses.com>",
@@ -41,86 +43,106 @@
       "sqft": null,
       "dateAdded": "2026-02-19T17:15:10.096733",
       "viewed": false,
-      "url": "https://www.redfin.com/verify-email?token=d23a0d98072c5c7de1d0bcd5cfb22152b47eb831c793f9b3ce3e50f78fc684ae&amp;loginId=105327038)"
+      "url": "https://www.redfin.com/verify-email?token=d23a0d98072c5c7de1d0bcd5cfb22152b47eb831c793f9b3ce3e50f78fc684ae&amp;loginId=105327038)",
+      "imageUrl": "https://redfin.widen.net/content/vqxh7kc7jy/png/Style%3DLarge%20Powered%20By.png",
+      "emailDate": "2026-02-19T21:52:40+00:00"
     },
     {
       "id": "Redfin_<0101019c77f15286-1ef9e6b2-8a81-47c3-910c-98e2d4fa2e39-000000@us-west-2.amazonses.com>",
       "source": "Redfin",
       "subject": "Roci wants you to see the home at 616 Tennis Ave",
-      "address": "616 Tennis Ave  Roci wants you to see the home at 616 Tennis Ave",
+      "address": "616 Tennis Ave",
       "price": 489000,
       "beds": 4,
       "baths": 2.0,
-      "sqft": null,
+      "sqft": 1760,
       "dateAdded": "2026-02-19T17:15:10.553904",
       "viewed": false,
-      "url": "http://www.redfin.com/PA/Glenside/616-Tennis-Ave-19038/home/38253033?utm_source=web_share&utm_medium=share&utm_campaign=email_this_listing&utm_nooverride=1"
+      "url": "http://www.redfin.com/PA/Glenside/616-Tennis-Ave-19038/home/38253033?utm_source=web_share&utm_medium=share&utm_campaign=email_this_listing&utm_nooverride=1",
+      "imageUrl": "https://ssl.cdn-redfin.com/photo/235/bigphoto/462/PAMC2166462_1.jpg",
+      "city": "Glenside",
+      "emailDate": "2026-02-19T22:07:09+00:00"
     },
     {
       "id": "Redfin_<0101019c77f2da3f-7cf1a6ea-2e3d-49e4-a95f-e4b66bece76c-000000@us-west-2.amazonses.com>",
       "source": "Redfin",
       "subject": "Roci wants you to see the home at 414 Hallowell Ave",
-      "address": "414 Hallowell Ave  Roci wants you to see the home at 414 Hallowell Ave",
+      "address": "414 Hallowell Ave",
       "price": 550000,
       "beds": 4,
       "baths": 2.0,
-      "sqft": null,
+      "sqft": 1650,
       "dateAdded": "2026-02-19T17:15:10.807046",
       "viewed": false,
-      "url": "http://www.redfin.com/PA/Horsham/414-Hallowell-Ave-19044/home/38393065?utm_source=web_share&utm_medium=share&utm_campaign=email_this_listing&utm_nooverride=1"
+      "url": "http://www.redfin.com/PA/Horsham/414-Hallowell-Ave-19044/home/38393065?utm_source=web_share&utm_medium=share&utm_campaign=email_this_listing&utm_nooverride=1",
+      "imageUrl": "https://ssl.cdn-redfin.com/photo/235/bigphoto/698/PAMC2165698_2.jpg",
+      "city": "Horsham",
+      "emailDate": "2026-02-19T22:08:50+00:00"
     },
     {
       "id": "Redfin_<0101019c77f3eddb-7791d3d0-df5b-4221-9371-89203e60564b-000000@us-west-2.amazonses.com>",
       "source": "Redfin",
       "subject": "Roci wants you to see the home at 2344 Oakfield Rd",
-      "address": "2344 Oakfield Rd  Roci wants you to see the home at 2344 Oakfield Rd",
+      "address": "2344 Oakfield Rd",
       "price": 560000,
       "beds": 4,
       "baths": 2.5,
-      "sqft": null,
+      "sqft": 1750,
       "dateAdded": "2026-02-19T17:15:11.156620",
       "viewed": false,
-      "url": "http://www.redfin.com/PA/Warrington/2344-Oakfield-Rd-18976/home/39385140?utm_source=web_share&utm_medium=share&utm_campaign=email_this_listing&utm_nooverride=1"
+      "url": "http://www.redfin.com/PA/Warrington/2344-Oakfield-Rd-18976/home/39385140?utm_source=web_share&utm_medium=share&utm_campaign=email_this_listing&utm_nooverride=1",
+      "imageUrl": "https://ssl.cdn-redfin.com/photo/235/bigphoto/810/PABU2113810_1.jpg",
+      "city": "Warrington",
+      "emailDate": "2026-02-19T22:10:00+00:00"
     },
     {
       "id": "Redfin_<0101019c77f43db1-41a618da-cb90-462a-a3a8-1f93e0d61cce-000000@us-west-2.amazonses.com>",
       "source": "Redfin",
       "subject": "Roci wants you to see the home at 312 Royal Ave",
-      "address": "312 Royal Ave  Roci wants you to see the home at 312 Royal Ave",
+      "address": "312 Royal Ave",
       "price": 575000,
       "beds": 3,
       "baths": 2.0,
-      "sqft": null,
+      "sqft": 1955,
       "dateAdded": "2026-02-19T17:15:11.384001",
       "viewed": false,
-      "url": "http://www.redfin.com/PA/North-Wales/312-Royal-Ave-19454/home/38941585?utm_source=web_share&utm_medium=share&utm_campaign=email_this_listing&utm_nooverride=1"
+      "url": "http://www.redfin.com/PA/North-Wales/312-Royal-Ave-19454/home/38941585?utm_source=web_share&utm_medium=share&utm_campaign=email_this_listing&utm_nooverride=1",
+      "imageUrl": "https://ssl.cdn-redfin.com/photo/235/bigphoto/552/PAMC2167552_0.jpg",
+      "city": "North Wales",
+      "emailDate": "2026-02-19T22:10:21+00:00"
     },
     {
       "id": "Redfin_<0101019c77f5f023-a981510e-68a8-41f9-ab40-21be33851c6c-000000@us-west-2.amazonses.com>",
       "source": "Redfin",
       "subject": "Roci wants you to see the home at 317 Summer Ave",
-      "address": "317 Summer Ave  Roci wants you to see the home at 317 Summer Ave",
+      "address": "317 Summer Ave",
       "price": 520000,
       "beds": 4,
       "baths": 2.0,
-      "sqft": null,
+      "sqft": 2248,
       "dateAdded": "2026-02-19T17:15:11.700193",
       "viewed": false,
-      "url": "http://www.redfin.com/PA/Horsham/317-Summer-Ave-19044/home/38411628?utm_source=web_share&utm_medium=share&utm_campaign=email_this_listing&utm_nooverride=1"
+      "url": "http://www.redfin.com/PA/Horsham/317-Summer-Ave-19044/home/38411628?utm_source=web_share&utm_medium=share&utm_campaign=email_this_listing&utm_nooverride=1",
+      "imageUrl": "https://ssl.cdn-redfin.com/photo/235/bigphoto/094/PAMC2167094_3.jpg",
+      "city": "Horsham",
+      "emailDate": "2026-02-19T22:12:12+00:00"
     },
     {
       "id": "Redfin_<0101019c77f6bc15-0bb76b68-0e64-4e7f-99c2-f7260f6f669b-000000@us-west-2.amazonses.com>",
       "source": "Redfin",
       "subject": "Roci wants you to see the home at 2625 Horsham Rd",
-      "address": "2625 Horsham Rd  Roci wants you to see the home at 2625 Horsham Rd",
+      "address": "2625 Horsham Rd",
       "price": 459999,
       "beds": 3,
       "baths": 2.5,
-      "sqft": null,
+      "sqft": 2175,
       "dateAdded": "2026-02-19T17:15:12.359798",
       "viewed": false,
-      "url": "http://www.redfin.com/PA/Hatboro/2625-Horsham-Rd-19040/home/39009158?utm_source=web_share&utm_medium=share&utm_campaign=email_this_listing&utm_nooverride=1"
+      "url": "http://www.redfin.com/PA/Hatboro/2625-Horsham-Rd-19040/home/39009158?utm_source=web_share&utm_medium=share&utm_campaign=email_this_listing&utm_nooverride=1",
+      "imageUrl": "https://ssl.cdn-redfin.com/photo/235/bigphoto/088/PAMC2159088_9.jpg",
+      "city": "Hatboro",
+      "emailDate": "2026-02-19T22:13:04+00:00"
     }
   ],
-  "lastScanned": "2026-02-19T17:46:18.122446"
+  "lastScanned": "2026-02-19T17:52:01.895217"
 }

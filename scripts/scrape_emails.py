@@ -84,23 +84,24 @@ def parse_sqft(text):
 
 def extract_image_url(html_body, source):
     """Extract property image URL from HTML email"""
-    image_url = None
-    
     if not html_body:
         return None
     
-    # Redfin image patterns (most common)
+    # Redfin image patterns - look for the main property photo
     if source == 'Redfin':
-        # Look for Redfin photo URLs in various formats
+        # Try to find the main listing photo (usually the first/largest)
         patterns = [
-            r'https://ssl\.cdn-redfin\.com/[^\s<>"\']+\.jpg',
-            r'https://[\w\-]+\.redfin\.com/[^\s<>"\']+\.jpg',
-            r'https://photos\.redfin\.com/[^\s<>"\']+\.jpg'
+            # Standard Redfin CDN photos
+            r'https://ssl\.cdn-redfin\.com/photo/\d+/[^\s<>"\']+\.jpg',
+            r'https://ssl\.cdn-redfin\.com/photo/\d+/bigphoto/[^\s<>"\']+\.jpg',
+            # Alternative Redfin photo formats
+            r'https://[\w\-]*\.cdn-redfin\.com/[^\s<>"\']+\.jpg',
         ]
         for pattern in patterns:
-            match = re.search(pattern, html_body, re.IGNORECASE)
-            if match:
-                return match.group(0)
+            matches = re.findall(pattern, html_body, re.IGNORECASE)
+            if matches:
+                # Return the first match (usually the main photo)
+                return matches[0]
     
     # Zillow image patterns
     if source == 'Zillow':
@@ -113,42 +114,50 @@ def extract_image_url(html_body, source):
             if match:
                 return match.group(0)
     
-    # Generic image URL patterns - look for large property photos
-    if not image_url:
-        # Find img tags with src
-        img_matches = re.findall(r'<img[^>]+src=["\']([^"\']+)["\'][^>]*>', html_body, re.IGNORECASE)
-        for img_url in img_matches:
-            # Skip tiny images, icons, logos
-            if any(skip in img_url.lower() for skip in ['logo', 'icon', 'button', 'arrow', 'social', 'spacer', 'pixel']):
-                continue
-            # Prefer larger property images
-            if any(good in img_url.lower() for good in ['photo', 'image', 'listing', 'property']):
-                image_url = img_url
-                break
+    # Generic: Find all image URLs and pick the best one
+    img_urls = re.findall(r'https?://[^\s<>"\']+\.(?:jpg|jpeg|png)', html_body, re.IGNORECASE)
     
-    return image_url
+    for url in img_urls:
+        # Skip tiny images, icons, logos, tracking pixels
+        if any(skip in url.lower() for skip in ['logo', 'icon', 'button', 'arrow', 'social', 'spacer', 'pixel', 'tracking', '1x1', 'beacon']):
+            continue
+        # Prefer property/photo/listing images
+        if any(good in url.lower() for good in ['photo', 'image', 'listing', 'property', 'home', 'house']):
+            return url
+    
+    # If no preferred image found, return the first non-skipped URL
+    for url in img_urls:
+        if not any(skip in url.lower() for skip in ['logo', 'icon', 'button', 'arrow', 'social', 'spacer', 'pixel', 'tracking', '1x1', 'beacon']):
+            return url
+    
+    return None
 
 def parse_address_from_subject(subject):
     """Extract clean address from email subject"""
-    # Remove common prefixes
+    # Remove common prefixes - be more aggressive
     clean = subject
-    prefixes_to_remove = [
-        'Roci wants you to see the home at ',
-        'New Listing: ',
-        'Price Changed: ',
-        'New home: ',
-        'Check out ',
-        'See ',
+    
+    # Pattern-based removal
+    patterns_to_remove = [
+        r'^Roci wants you to see the home at\s*',
+        r'^New Listing:\s*',
+        r'^Price Changed:\s*',
+        r'^New home:\s*',
+        r'^Check out\s*',
+        r'^See\s*',
+        r'^For sale:\s*',
     ]
     
-    for prefix in prefixes_to_remove:
-        if clean.startswith(prefix):
-            clean = clean[len(prefix):]
+    for pattern in patterns_to_remove:
+        clean = re.sub(pattern, '', clean, flags=re.IGNORECASE)
     
-    # Remove suffixes like "- Redfin" or "| Zillow"
-    clean = re.sub(r'\s*[-|]\s*(Redfin|Zillow|Realtor|Trulia|Homes\.com).*$', '', clean, flags=re.IGNORECASE)
+    # Remove suffixes like "- Redfin" or "| Zillow" or just "Redfin"
+    clean = re.sub(r'\s*[-|]?\s*(?:Redfin|Zillow|Realtor|Trulia|Homes\.com).*$', '', clean, flags=re.IGNORECASE)
     
-    return clean.strip()
+    # Clean up any remaining clutter
+    clean = clean.strip()
+    
+    return clean
 
 def parse_city_state_from_body(body, address):
     """Extract city, state, zip from email body"""
@@ -364,13 +373,33 @@ def scrape_emails():
                         
                         listing = parse_listing_email(msg, source)
                         
-                        # Skip if duplicate
+                        # Check if this is a new or existing listing
                         if listing['id'] not in existing_ids:
-                            # Only add if we have a valid address (not just the subject)
+                            # New listing - add it
                             if listing['address'] and len(listing['address']) > 5:
                                 new_listings.append(listing)
                                 existing_ids.add(listing['id'])
                                 print(f"  → New listing: {listing['address'][:50]} in {listing['city']} - ${listing['price']}")
+                        else:
+                            # Existing listing - update it with better data
+                            existing_idx = next((i for i, l in enumerate(existing_listings) if l['id'] == listing['id']), None)
+                            if existing_idx is not None:
+                                existing = existing_listings[existing_idx]
+                                # Update with better/cleaner data
+                                if listing['imageUrl'] and not existing.get('imageUrl'):
+                                    existing['imageUrl'] = listing['imageUrl']
+                                    print(f"  → Updated image for: {listing['address'][:40]}")
+                                # Update address if the new one is cleaner (shorter)
+                                if len(listing['address']) < len(existing.get('address', '')):
+                                    existing['address'] = listing['address']
+                                    print(f"  → Updated address for: {listing['address'][:40]}")
+                                # Update other fields if missing
+                                if listing['city'] and not existing.get('city'):
+                                    existing['city'] = listing['city']
+                                if listing['sqft'] and not existing.get('sqft'):
+                                    existing['sqft'] = listing['sqft']
+                                if listing['emailDate'] and not existing.get('emailDate'):
+                                    existing['emailDate'] = listing['emailDate']
         
         # Combine and save
         all_listings = new_listings + existing_listings
