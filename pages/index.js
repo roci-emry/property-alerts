@@ -92,7 +92,7 @@ export default function PropertyAlerts() {
               }}>
                 Property Alerts
               </h1>
-              <p style={{ margin: '5px 0 0 0', color: '#8892b0', fontSize: '14px' }}>
+              <p style={{ margin: '10px 0 0 0', color: '#8892b0', fontSize: '14px' }}>
                 Conshohocken / Oreland / Surrounding Areas
               </p>
             </div>
@@ -244,7 +244,7 @@ export default function PropertyAlerts() {
           </div>
         ) : (
           <div style={{ display: 'grid', gap: '15px', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))' }}>
-            {filteredListings.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded)).map(listing => (
+            {filteredListings.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded)).map((listing) => (
               <div key={listing.id} style={{
                 background: listing.viewed 
                   ? 'rgba(10, 25, 47, 0.5)' 
@@ -345,92 +345,48 @@ export default function PropertyAlerts() {
                   </div>
 
                   <div style={{ display: 'flex', gap: '10px' }}>
-                  <div>
-                    <div style={{ display: 'flex', gap: '10px', marginBottom: '8px' }}>
-                      <span style={{
-                        padding: '4px 10px',
-                        borderRadius: '4px',
-                        fontSize: '11px',
-                        background: listing.source === 'Zillow' ? 'rgba(0, 116, 228, 0.2)' :
-                                    listing.source === 'Redfin' ? 'rgba(165, 20, 35, 0.2)' :
-                                    'rgba(0, 243, 255, 0.2)',
-                        color: listing.source === 'Zillow' ? '#0074e4' :
-                               listing.source === 'Redfin' ? '#a51423' :
-                               '#00f3ff'
-                      }}>
-                        {listing.source}
-                      </span>
-                      {!listing.viewed && (
-                        <span style={{
-                          padding: '4px 10px',
-                          borderRadius: '4px',
-                          fontSize: '11px',
-                          background: 'rgba(0, 255, 136, 0.2)',
-                          color: '#00ff88'
-                        }}>
-                          NEW
-                        </span>
-                      )}
-                    </div>
-                    <h3 style={{ margin: '0 0 5px 0', color: '#ccd6f6', fontSize: '18px' }}>
-                      {listing.address}
-                    </h3>
-                    <p style={{ margin: 0, color: '#8892b0', fontSize: '14px' }}>
-                      {listing.city}, {listing.state} {listing.zip}
-                    </p>
-                  </div>
-                  <div style={{ textAlign: 'right' }}>
-                    <p style={{ margin: '0 0 5px 0', fontSize: '24px', fontWeight: '700', color: '#00f3ff' }}>
-                      ${listing.price?.toLocaleString()}
-                    </p>
-                    <p style={{ margin: 0, color: '#8892b0', fontSize: '12px' }}>
-                      {listing.beds} bd | {listing.baths} ba | {listing.sqft?.toLocaleString()} sqft
-                    </p>
-                  </div>
-                </div>
-
-                <div style={{ display: 'flex', gap: '10px', marginTop: '15px' }}>
-                  <a
-                    href={listing.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => markAsViewed(listing.id)}
-                    style={{
-                      flex: 1,
-                      padding: '10px',
-                      background: 'linear-gradient(90deg, #00f3ff, #0066ff)',
-                      border: 'none',
-                      borderRadius: '6px',
-                      color: '#0a0e27',
-                      textAlign: 'center',
-                      textDecoration: 'none',
-                      fontWeight: '600',
-                      fontSize: '13px'
-                    }}
-                  >
-                    View on {listing.source} →
-                  </a>
-                  {!listing.viewed && (
-                    <button
+                    <a
+                      href={listing.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       onClick={() => markAsViewed(listing.id)}
                       style={{
-                        padding: '10px 15px',
-                        background: 'transparent',
-                        border: '1px solid rgba(136, 146, 176, 0.3)',
+                        flex: 1,
+                        padding: '10px',
+                        background: 'linear-gradient(90deg, #00f3ff, #0066ff)',
+                        border: 'none',
                         borderRadius: '6px',
-                        color: '#8892b0',
-                        cursor: 'pointer',
+                        color: '#0a0e27',
+                        textAlign: 'center',
+                        textDecoration: 'none',
+                        fontWeight: '600',
                         fontSize: '13px'
                       }}
                     >
-                      Mark Viewed
-                    </button>
-                  )}
-                </div>
+                      View on {listing.source} →
+                    </a>
+                    {!listing.viewed && (
+                      <button
+                        onClick={() => markAsViewed(listing.id)}
+                        style={{
+                          padding: '10px 15px',
+                          background: 'transparent',
+                          border: '1px solid rgba(136, 146, 176, 0.3)',
+                          borderRadius: '6px',
+                          color: '#8892b0',
+                          cursor: 'pointer',
+                          fontSize: '13px'
+                        }}
+                      >
+                        Mark Viewed
+                      </button>
+                    )}
+                  </div>
 
-                <p style={{ margin: '10px 0 0 0', color: '#8892b0', fontSize: '11px' }}>
-                  Found: {new Date(listing.dateAdded).toLocaleString()}
-                </p>
+                  <p style={{ margin: '10px 0 0 0', color: '#8892b0', fontSize: '11px' }}>
+                    Found: {new Date(listing.dateAdded).toLocaleString()}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
