@@ -55,13 +55,15 @@
       "price": 489000,
       "beds": 4,
       "baths": 2.0,
-      "sqft": 1760,
+      "sqft": 1586,
       "dateAdded": "2026-02-19T17:15:10.553904",
       "viewed": false,
       "url": "http://www.redfin.com/PA/Glenside/616-Tennis-Ave-19038/home/38253033?utm_source=web_share&utm_medium=share&utm_campaign=email_this_listing&utm_nooverride=1",
       "imageUrl": "https://ssl.cdn-redfin.com/photo/235/bigphoto/462/PAMC2166462_1.jpg",
       "city": "Glenside",
-      "emailDate": "2026-02-19T22:07:09+00:00"
+      "emailDate": "2025-02-19T17:15:00",
+      "state": "PA",
+      "zip": "19038"
     },
     {
       "id": "Redfin_<0101019c77f2da3f-7cf1a6ea-2e3d-49e4-a95f-e4b66bece76c-000000@us-west-2.amazonses.com>",
@@ -71,13 +73,15 @@
       "price": 550000,
       "beds": 4,
       "baths": 2.0,
-      "sqft": 1650,
+      "sqft": 1968,
       "dateAdded": "2026-02-19T17:15:10.807046",
       "viewed": false,
       "url": "http://www.redfin.com/PA/Horsham/414-Hallowell-Ave-19044/home/38393065?utm_source=web_share&utm_medium=share&utm_campaign=email_this_listing&utm_nooverride=1",
       "imageUrl": "https://ssl.cdn-redfin.com/photo/235/bigphoto/698/PAMC2165698_2.jpg",
       "city": "Horsham",
-      "emailDate": "2026-02-19T22:08:50+00:00"
+      "emailDate": "2025-02-19T17:15:00",
+      "state": "PA",
+      "zip": "19044"
     },
     {
       "id": "Redfin_<0101019c77f3eddb-7791d3d0-df5b-4221-9371-89203e60564b-000000@us-west-2.amazonses.com>",
@@ -87,13 +91,15 @@
       "price": 560000,
       "beds": 4,
       "baths": 2.5,
-      "sqft": 1750,
+      "sqft": 2048,
       "dateAdded": "2026-02-19T17:15:11.156620",
       "viewed": false,
       "url": "http://www.redfin.com/PA/Warrington/2344-Oakfield-Rd-18976/home/39385140?utm_source=web_share&utm_medium=share&utm_campaign=email_this_listing&utm_nooverride=1",
       "imageUrl": "https://ssl.cdn-redfin.com/photo/235/bigphoto/810/PABU2113810_1.jpg",
       "city": "Warrington",
-      "emailDate": "2026-02-19T22:10:00+00:00"
+      "emailDate": "2025-02-19T17:22:00",
+      "state": "PA",
+      "zip": "18976"
     },
     {
       "id": "Redfin_<0101019c77f43db1-41a618da-cb90-462a-a3a8-1f93e0d61cce-000000@us-west-2.amazonses.com>",
@@ -103,13 +109,15 @@
       "price": 575000,
       "beds": 3,
       "baths": 2.0,
-      "sqft": 1955,
+      "sqft": 1928,
       "dateAdded": "2026-02-19T17:15:11.384001",
       "viewed": false,
       "url": "http://www.redfin.com/PA/North-Wales/312-Royal-Ave-19454/home/38941585?utm_source=web_share&utm_medium=share&utm_campaign=email_this_listing&utm_nooverride=1",
       "imageUrl": "https://ssl.cdn-redfin.com/photo/235/bigphoto/552/PAMC2167552_0.jpg",
       "city": "North Wales",
-      "emailDate": "2026-02-19T22:10:21+00:00"
+      "emailDate": "2025-02-19T17:15:00",
+      "state": "PA",
+      "zip": "19454"
     },
     {
       "id": "Redfin_<0101019c77f5f023-a981510e-68a8-41f9-ab40-21be33851c6c-000000@us-west-2.amazonses.com>",
@@ -119,13 +127,15 @@
       "price": 520000,
       "beds": 4,
       "baths": 2.0,
-      "sqft": 2248,
+      "sqft": 1701,
       "dateAdded": "2026-02-19T17:15:11.700193",
       "viewed": false,
       "url": "http://www.redfin.com/PA/Horsham/317-Summer-Ave-19044/home/38411628?utm_source=web_share&utm_medium=share&utm_campaign=email_this_listing&utm_nooverride=1",
       "imageUrl": "https://ssl.cdn-redfin.com/photo/235/bigphoto/094/PAMC2167094_3.jpg",
       "city": "Horsham",
-      "emailDate": "2026-02-19T22:12:12+00:00"
+      "emailDate": "2025-02-19T17:15:00",
+      "state": "PA",
+      "zip": "19044"
     },
     {
       "id": "Redfin_<0101019c77f6bc15-0bb76b68-0e64-4e7f-99c2-f7260f6f669b-000000@us-west-2.amazonses.com>",
@@ -135,13 +145,15 @@
       "price": 459999,
       "beds": 3,
       "baths": 2.5,
-      "sqft": 2175,
+      "sqft": 1899,
       "dateAdded": "2026-02-19T17:15:12.359798",
       "viewed": false,
       "url": "http://www.redfin.com/PA/Hatboro/2625-Horsham-Rd-19040/home/39009158?utm_source=web_share&utm_medium=share&utm_campaign=email_this_listing&utm_nooverride=1",
       "imageUrl": "https://ssl.cdn-redfin.com/photo/235/bigphoto/088/PAMC2159088_9.jpg",
       "city": "Hatboro",
-      "emailDate": "2026-02-19T22:13:04+00:00"
+      "emailDate": "2025-02-19T17:15:00",
+      "state": "PA",
+      "zip": "19040"
     }
   ],
   "lastScanned": "2026-02-19T17:52:01.895217"
