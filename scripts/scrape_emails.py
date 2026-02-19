@@ -25,7 +25,7 @@ SOURCE_PATTERNS = {
     },
     'Redfin': {
         'from_patterns': ['redfin.com', 'redfin'],
-        'subject_patterns': ['New Listing', 'Price Changed', 'New property']
+        'subject_patterns': ['New Listing', 'Price Changed', 'New property', 'wants you to see']
     },
     'Realtor.com': {
         'from_patterns': ['realtor.com'],
@@ -59,7 +59,7 @@ def parse_beds_baths(text):
     if bed_match:
         beds = int(bed_match.group(1))
     
-    # Look for "X ba" or "X baths"
+    # Look for "X ba" or "X baths"  
     bath_match = re.search(r'(\d+(?:\.5)?)\s*(?:ba|bath|bathroom)', text, re.IGNORECASE)
     if bath_match:
         baths = float(bath_match.group(1))
@@ -68,118 +68,125 @@ def parse_beds_baths(text):
 
 def parse_sqft(text):
     """Extract square footage from text"""
-    match = re.search(r'(\d{3,4})\s*sqft', text, re.IGNORECASE)
-    if match:
-        return int(match.group(1))
+    # Match patterns like "2,400 sqft", "2400 sqft", "2,400 Square Feet"
+    patterns = [
+        r'(\d{1,3},\d{3})\s*(?:sqft|sq ft|square feet)',
+        r'(\d{3,4})\s*(?:sqft|sq ft|square feet)',
+        r'(\d{1,3},\d{3})\s*Sq\.?\s*Ft',
+        r'(\d{3,4})\s*Sq\.?\s*Ft'
+    ]
+    
+    for pattern in patterns:
+        match = re.search(pattern, text, re.IGNORECASE)
+        if match:
+            return int(match.group(1).replace(',', ''))
     return None
 
-def extract_image_url(body, source):
-    """Extract the main property image URL from email"""
+def extract_image_url(html_body, source):
+    """Extract property image URL from HTML email"""
     image_url = None
     
-    # Look for image URLs in the email body
-    if source == 'Zillow':
-        # Zillow image patterns
-        match = re.search(r'https://photos\.zillowstatic\.com/[^\s<>"\']+\.jpg', body, re.IGNORECASE)
-        if match:
-            image_url = match.group(0)
-    elif source == 'Redfin':
-        # Redfin image patterns
-        match = re.search(r'https://ssl\.cdn-redfin\.com/[^\s<>"\']+\.jpg', body, re.IGNORECASE)
-        if not match:
-            match = re.search(r'https://[\w\-]+\.redfin\.com/[^\s<>"\']+\.jpg', body, re.IGNORECASE)
-        if match:
-            image_url = match.group(0)
-    elif source == 'Realtor.com':
-        # Realtor.com image patterns
-        match = re.search(r'https://ap\.rcdn\.com/[^\s<>"\']+\.jpg', body, re.IGNORECASE)
-        if match:
-            image_url = match.group(0)
+    if not html_body:
+        return None
     
-    # Generic image URL pattern fallback
-    if not image_url:
-        # Look for any image URL that looks like a property photo
-        generic_patterns = [
-            r'(https?://[^\s<>"\']+\.(?:jpg|jpeg|png))',
-            r'(https?://[^\s<>"\']+/photos/[^\s<>"\']+)',
-            r'(https?://[^\s<>"\']+/_next/image[^\s<>"\']+)'
+    # Redfin image patterns (most common)
+    if source == 'Redfin':
+        # Look for Redfin photo URLs in various formats
+        patterns = [
+            r'https://ssl\.cdn-redfin\.com/[^\s<>"\']+\.jpg',
+            r'https://[\w\-]+\.redfin\.com/[^\s<>"\']+\.jpg',
+            r'https://photos\.redfin\.com/[^\s<>"\']+\.jpg'
         ]
-        for pattern in generic_patterns:
-            match = re.search(pattern, body, re.IGNORECASE)
+        for pattern in patterns:
+            match = re.search(pattern, html_body, re.IGNORECASE)
             if match:
-                potential_url = match.group(1)
-                # Filter out tiny icons and logos
-                if not any(x in potential_url.lower() for x in ['logo', 'icon', 'button', 'arrow', 'social']):
-                    image_url = potential_url
-                    break
+                return match.group(0)
+    
+    # Zillow image patterns
+    if source == 'Zillow':
+        patterns = [
+            r'https://photos\.zillowstatic\.com/[^\s<>"\']+\.jpg',
+            r'https://[\w\-]+\.zillow\.com/[^\s<>"\']+\.jpg'
+        ]
+        for pattern in patterns:
+            match = re.search(pattern, html_body, re.IGNORECASE)
+            if match:
+                return match.group(0)
+    
+    # Generic image URL patterns - look for large property photos
+    if not image_url:
+        # Find img tags with src
+        img_matches = re.findall(r'<img[^>]+src=["\']([^"\']+)["\'][^>]*>', html_body, re.IGNORECASE)
+        for img_url in img_matches:
+            # Skip tiny images, icons, logos
+            if any(skip in img_url.lower() for skip in ['logo', 'icon', 'button', 'arrow', 'social', 'spacer', 'pixel']):
+                continue
+            # Prefer larger property images
+            if any(good in img_url.lower() for good in ['photo', 'image', 'listing', 'property']):
+                image_url = img_url
+                break
     
     return image_url
 
-def parse_address(subject, body):
-    """Extract address from email"""
-    # Common patterns in listing emails
-    # Try to find street address pattern
-    address_patterns = [
-        r'(\d+\s+[\w\s]+(?:Street|St|Avenue|Ave|Road|Rd|Boulevard|Blvd|Lane|Ln|Drive|Dr|Court|Ct|Way|Circle|Cir)\.?)',
-        r'(\d+\s+[\w\s]+,?\s*(?:Conshohocken|Oreland|Norristown|Plymouth Meeting|Glenside|Ambler|Blue Bell))'
+def parse_address_from_subject(subject):
+    """Extract clean address from email subject"""
+    # Remove common prefixes
+    clean = subject
+    prefixes_to_remove = [
+        'Roci wants you to see the home at ',
+        'New Listing: ',
+        'Price Changed: ',
+        'New home: ',
+        'Check out ',
+        'See ',
     ]
     
-    for pattern in address_patterns:
-        match = re.search(pattern, subject + ' ' + body, re.IGNORECASE)
-        if match:
-            return match.group(1).strip()
+    for prefix in prefixes_to_remove:
+        if clean.startswith(prefix):
+            clean = clean[len(prefix):]
     
-    # If no match, return the subject as address (common in Zillow)
-    return subject.split(' - ')[0].strip()
+    # Remove suffixes like "- Redfin" or "| Zillow"
+    clean = re.sub(r'\s*[-|]\s*(Redfin|Zillow|Realtor|Trulia|Homes\.com).*$', '', clean, flags=re.IGNORECASE)
+    
+    return clean.strip()
 
-def parse_listing_email(msg, source):
-    """Parse a listing email and extract details"""
-    subject = msg.get('Subject', '')
-    body = ''
+def parse_city_state_from_body(body, address):
+    """Extract city, state, zip from email body"""
+    city = None
+    state = 'PA'  # Default
+    zip_code = None
     
-    # Get email body
-    if msg.is_multipart():
-        for part in msg.walk():
-            content_type = part.get_content_type()
-            if content_type == 'text/plain' or content_type == 'text/html':
-                try:
-                    body = part.get_payload(decode=True).decode('utf-8', errors='ignore')
-                    break
-                except:
-                    continue
-    else:
-        try:
-            body = msg.get_payload(decode=True).decode('utf-8', errors='ignore')
-        except:
-            body = str(msg.get_payload())
+    # Look for city, PA pattern
+    # Common PA cities in the area
+    pa_cities = [
+        'Conshohocken', 'Oreland', 'Plymouth Meeting', 'Norristown', 
+        'Glenside', 'Ambler', 'Blue Bell', 'Horsham', 'Hatboro',
+        'Warrington', 'North Wales', 'Fort Washington', 'Flourtown',
+        'Lafayette Hill', 'Narberth', 'Ardmore', 'Bryn Mawr'
+    ]
     
-    # Clean HTML tags if present
-    body = re.sub(r'<[^>]+>', ' ', body)
-    body = re.sub(r'\s+', ' ', body)
+    for city_name in pa_cities:
+        pattern = rf'{city_name},?\s*PA'
+        if re.search(pattern, body, re.IGNORECASE):
+            city = city_name
+            break
     
-    # Extract details
-    full_text = subject + ' ' + body
+    # Look for ZIP code
+    zip_match = re.search(r'\b(190\d{2}|189\d{2}|194\d{2})\b', body)
+    if zip_match:
+        zip_code = zip_match.group(1)
     
-    listing = {
-        'id': f"{source}_{msg.get('Message-ID', datetime.now().isoformat())}",
-        'source': source,
-        'subject': subject,
-        'address': parse_address(subject, body),
-        'price': parse_price(full_text),
-        'beds': parse_beds_baths(full_text)[0],
-        'baths': parse_beds_baths(full_text)[1],
-        'sqft': parse_sqft(full_text),
-        'dateAdded': datetime.now().isoformat(),
-        'viewed': False,
-        'url': extract_url(body, source),
-        'imageUrl': extract_image_url(body, source)
-    }
+    # If no city found in body, try to infer from address
+    if not city and address:
+        for city_name in pa_cities:
+            if city_name.lower() in address.lower():
+                city = city_name
+                break
     
-    return listing
+    return city, state, zip_code
 
 def extract_url(body, source):
     """Extract listing URL from email body"""
-    # Look for URLs in the email
     url_patterns = {
         'Zillow': r'https?://www\.zillow\.com/homedetails/[^\s<>"]+',
         'Redfin': r'https?://www\.redfin\.com/[^\s<>"]+',
@@ -194,7 +201,7 @@ def extract_url(body, source):
     if match:
         return match.group(0)
     
-    # Default URLs if we can't extract
+    # Default URLs
     defaults = {
         'Zillow': 'https://www.zillow.com',
         'Redfin': 'https://www.redfin.com',
@@ -211,12 +218,10 @@ def identify_source(from_email, subject):
     subject_lower = subject.lower()
     
     for source, patterns in SOURCE_PATTERNS.items():
-        # Check from patterns
         for from_pattern in patterns['from_patterns']:
             if from_pattern.lower() in from_lower:
                 return source
         
-        # Check subject patterns
         for subj_pattern in patterns['subject_patterns']:
             if subj_pattern.lower() in subject_lower:
                 return source
@@ -237,8 +242,6 @@ def load_existing_listings():
 def save_listings(listings):
     """Save listings to data file"""
     data_file = os.path.join(os.path.dirname(__file__), '..', 'public', 'data', 'listings.json')
-    
-    # Ensure directory exists
     os.makedirs(os.path.dirname(data_file), exist_ok=True)
     
     data = {
@@ -251,20 +254,90 @@ def save_listings(listings):
     
     print(f"Saved {len(listings)} listings to {data_file}")
 
+def parse_listing_email(msg, source):
+    """Parse a listing email and extract details"""
+    subject = msg.get('Subject', '')
+    html_body = ''
+    text_body = ''
+    
+    # Get email date
+    date_str = msg.get('Date', '')
+    try:
+        email_date = parsedate_to_datetime(date_str).isoformat()
+    except:
+        email_date = datetime.now().isoformat()
+    
+    # Get email body - separate HTML and text
+    if msg.is_multipart():
+        for part in msg.walk():
+            content_type = part.get_content_type()
+            if content_type == 'text/html':
+                try:
+                    html_body = part.get_payload(decode=True).decode('utf-8', errors='ignore')
+                except:
+                    pass
+            elif content_type == 'text/plain':
+                try:
+                    text_body = part.get_payload(decode=True).decode('utf-8', errors='ignore')
+                except:
+                    pass
+    else:
+        try:
+            raw_body = msg.get_payload(decode=True).decode('utf-8', errors='ignore')
+            if msg.get_content_type() == 'text/html':
+                html_body = raw_body
+            else:
+                text_body = raw_body
+        except:
+            text_body = str(msg.get_payload())
+    
+    # Use text body for text extraction (cleaner without HTML)
+    body_for_text = text_body if text_body else re.sub(r'<[^>]+>', ' ', html_body)
+    body_for_text = re.sub(r'\s+', ' ', body_for_text)
+    
+    # Parse address from subject
+    address = parse_address_from_subject(subject)
+    
+    # Get city/state from body
+    city, state, zip_code = parse_city_state_from_body(body_for_text, address)
+    
+    # Extract image from HTML body
+    image_url = extract_image_url(html_body, source)
+    
+    # Extract other details
+    full_text = subject + ' ' + body_for_text
+    
+    listing = {
+        'id': f"{source}_{msg.get('Message-ID', datetime.now().isoformat())}",
+        'source': source,
+        'address': address,
+        'city': city,
+        'state': state,
+        'zip': zip_code,
+        'price': parse_price(full_text),
+        'beds': parse_beds_baths(full_text)[0],
+        'baths': parse_beds_baths(full_text)[1],
+        'sqft': parse_sqft(body_for_text),
+        'dateAdded': datetime.now().isoformat(),
+        'emailDate': email_date,
+        'viewed': False,
+        'url': extract_url(body_for_text, source),
+        'imageUrl': image_url
+    }
+    
+    return listing
+
 def scrape_emails():
     """Main function to scrape listing emails"""
     print(f"Starting email scrape at {datetime.now()}")
     
     try:
-        # Connect to Gmail
         mail = imaplib.IMAP4_SSL('imap.gmail.com')
         mail.login(EMAIL, PASSWORD)
         mail.select('INBOX')
         
         # Search for emails from last 7 days
         since_date = (datetime.now() - timedelta(days=7)).strftime('%d-%b-%Y')
-        
-        # Get all emails from last 7 days
         _, search_data = mail.search(None, f'(SINCE {since_date})')
         
         existing_listings = load_existing_listings()
@@ -284,26 +357,24 @@ def scrape_emails():
                     from_email = msg.get('From', '')
                     subject = msg.get('Subject', '')
                     
-                    # Identify source
                     source = identify_source(from_email, subject)
                     
                     if source:
                         print(f"Found {source} listing: {subject[:60]}...")
                         
-                        # Parse the listing
                         listing = parse_listing_email(msg, source)
                         
-                        # Check if it's a duplicate
+                        # Skip if duplicate
                         if listing['id'] not in existing_ids:
-                            new_listings.append(listing)
-                            existing_ids.add(listing['id'])
-                            print(f"  → New listing: {listing['address'][:50]} - ${listing['price']}")
+                            # Only add if we have a valid address (not just the subject)
+                            if listing['address'] and len(listing['address']) > 5:
+                                new_listings.append(listing)
+                                existing_ids.add(listing['id'])
+                                print(f"  → New listing: {listing['address'][:50]} in {listing['city']} - ${listing['price']}")
         
         # Combine and save
         all_listings = new_listings + existing_listings
-        
-        # Keep only last 100 listings
-        all_listings = all_listings[:100]
+        all_listings = all_listings[:100]  # Keep last 100
         
         save_listings(all_listings)
         
@@ -317,6 +388,8 @@ def scrape_emails():
         
     except Exception as e:
         print(f"Error: {e}")
+        import traceback
+        traceback.print_exc()
         return 0
 
 if __name__ == '__main__':
