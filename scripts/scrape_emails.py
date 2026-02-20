@@ -134,10 +134,9 @@ def extract_image_url(html_body, source):
 
 def parse_address_from_subject(subject):
     """Extract clean address from email subject"""
-    # Remove common prefixes - be more aggressive
-    clean = subject
+    clean = subject.strip()
     
-    # Pattern-based removal
+    # Pattern-based removal - very aggressive
     patterns_to_remove = [
         r'^Roci wants you to see the home at\s*',
         r'^New Listing:\s*',
@@ -146,18 +145,29 @@ def parse_address_from_subject(subject):
         r'^Check out\s*',
         r'^See\s*',
         r'^For sale:\s*',
+        r'^Just Listed:\s*',
+        r'^Listing Alert:\s*',
     ]
     
     for pattern in patterns_to_remove:
         clean = re.sub(pattern, '', clean, flags=re.IGNORECASE)
     
-    # Remove suffixes like "- Redfin" or "| Zillow" or just "Redfin"
-    clean = re.sub(r'\s*[-|]?\s*(?:Redfin|Zillow|Realtor|Trulia|Homes\.com).*$', '', clean, flags=re.IGNORECASE)
+    # Remove suffixes - more aggressive patterns
+    # Match " - Redfin", "| Zillow", "Redfin" at end, etc.
+    clean = re.sub(r'\s*[-|]?\s*(?:Redfin|Zillow|Realtor|Trulia|Homes\.com|\.com).*$', '', clean, flags=re.IGNORECASE)
     
-    # Clean up any remaining clutter
-    clean = clean.strip()
+    # Remove any trailing punctuation
+    clean = re.sub(r'[\-|\s]+$', '', clean)
     
-    return clean
+    # If it still contains email-like phrases, something went wrong
+    if 'wants you to see' in clean.lower() or 'new listing' in clean.lower():
+        # Try extracting just the part that looks like an address
+        # Look for pattern: number + street name
+        match = re.search(r'(\d+\s+[\w\s]+(?:Street|St|Avenue|Ave|Road|Rd|Boulevard|Blvd|Lane|Ln|Drive|Dr|Court|Ct|Way|Circle|Cir|Highway|Hwy|Parkway|Pkwy)\.?)', clean, re.IGNORECASE)
+        if match:
+            clean = match.group(1)
+    
+    return clean.strip()
 
 def parse_city_state_from_body(body, address):
     """Extract city, state, zip from email body"""
@@ -222,20 +232,64 @@ def extract_url(body, source):
     return defaults.get(source, '#')
 
 def identify_source(from_email, subject):
-    """Identify which real estate site the email is from"""
+    """Identify which real estate site the email is from AND if it's a listing email"""
     from_lower = from_email.lower()
     subject_lower = subject.lower()
     
-    for source, patterns in SOURCE_PATTERNS.items():
+    # First check if it's from a known real estate domain
+    source = None
+    for src, patterns in SOURCE_PATTERNS.items():
         for from_pattern in patterns['from_patterns']:
             if from_pattern.lower() in from_lower:
-                return source
-        
-        for subj_pattern in patterns['subject_patterns']:
-            if subj_pattern.lower() in subject_lower:
-                return source
+                source = src
+                break
+        if source:
+            break
     
-    return None
+    if not source:
+        return None
+    
+    # Now validate it's actually a LISTING email, not other types
+    # Reject newsletters, updates, saved search digests, etc.
+    reject_patterns = [
+        'newsletter',
+        'market update',
+        'price drop alert',
+        'weekly digest',
+        'monthly update',
+        'saved search',
+        'search alert',
+        'recommended for you',
+        'tour',
+        'open house',
+    ]
+    
+    for pattern in reject_patterns:
+        if pattern in subject_lower:
+            return None  # Not a listing email
+    
+    # Must have listing-related patterns
+    listing_patterns = [
+        'new listing',
+        'price changed',
+        'new home',
+        'wants you to see',
+        'for sale',
+        'just listed',
+    ]
+    
+    has_listing_pattern = any(p in subject_lower for p in listing_patterns)
+    
+    if not has_listing_pattern:
+        # Additional check: does it look like an address?
+        # If subject has numbers and street-like words, it might be a listing
+        address_indicators = ['st', 'ave', 'rd', 'dr', 'ln', 'way', 'court', 'blvd', 'street', 'avenue', 'road', 'drive']
+        has_address = any(ind in subject_lower for ind in address_indicators)
+        
+        if not has_address:
+            return None  # Probably not a listing
+    
+    return source
 
 def load_existing_listings():
     """Load existing listings from data file"""
