@@ -1,6 +1,74 @@
 {
   "listings": [
     {
+      "id": "Redfin_<0101019c7851eaa7-aebb1687-a098-46fa-bc3f-499a13b11cd4-000000@us-west-2.amazonses.com>",
+      "source": "Redfin",
+      "address": "You're in!",
+      "city": null,
+      "state": "PA",
+      "zip": null,
+      "price": null,
+      "beds": null,
+      "baths": null,
+      "sqft": null,
+      "dateAdded": "2026-02-20T00:04:09.819555",
+      "emailDate": "2026-02-19T23:52:40+00:00",
+      "viewed": false,
+      "url": "https://www.redfin.com/houses-near-me),",
+      "imageUrl": "https://redfin.widen.net/content/vqxh7kc7jy/png/Style%3DLarge%20Powered%20By.png"
+    },
+    {
+      "id": "Homes.com_<bf89b791-9f05-4eeb-ad2d-e861b8d82368@ind1s01mta1416.xt.local>",
+      "source": "Homes.com",
+      "address": "Price Cut for 1868 Sunrise Way - Update in Roci House Search",
+      "city": null,
+      "state": "PA",
+      "zip": "18929",
+      "price": 599900,
+      "beds": 3,
+      "baths": 2.5,
+      "sqft": 1977,
+      "dateAdded": "2026-02-20T00:04:10.015346",
+      "emailDate": "2026-02-19T19:27:37-06:00",
+      "viewed": false,
+      "url": "https://www.homes.com/market/unsub/?t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvY2llbXJ5QGdtYWlsLmNvbSIsInZlciI6InYxIiwidXNlcl9rZXkiOiIycHA5eHg5IiwibmJmIjoxNzcxNTUwODQyLCJleHAiOjE4MDMwODY4NDIsImlzcyI6Imh0dHBzOi8vd3d3LmhvbWVzLmNvbSJ9.mR0R26eBB0Ie1Lq2Hin_EB8T0syZTaluQXvsil6tWXI&d=kx6yy2b&n=True&u=2pp9xx9",
+      "imageUrl": "https://image.email.homes.com/lib/fe3611727164047b701671/m/1/3891c7e9-2e06-42db-ad36-29d5aa0e904f.png"
+    },
+    {
+      "id": "Zillow_<8B.CA.45198.BC8B7996@i-03f51b796eeadcab6.mta2vrest.sd.prd.sparkpost>",
+      "source": "Zillow",
+      "address": "Price Cut: 1868 Sunrise Way, Jamison, PA 18929. Your 'Roci House Search' Search.",
+      "city": null,
+      "state": "PA",
+      "zip": "18929",
+      "price": 10000,
+      "beds": 2522,
+      "baths": 2522.0,
+      "sqft": 1977,
+      "dateAdded": "2026-02-20T00:04:10.167626",
+      "emailDate": "2026-02-20T01:28:43+00:00",
+      "viewed": false,
+      "url": "https://www.zillow.com",
+      "imageUrl": "https://photos.zillowstatic.com/fp/33b9717d1e206a015c4ae05252513732-zui_propcard_lg_1008_528.jpg"
+    },
+    {
+      "id": "Redfin_<0101019c78abd505-9856a941-282d-44a3-8970-12df7b5d3f13-000000@us-west-2.amazonses.com>",
+      "source": "Redfin",
+      "address": "Price decrease to $600K on 1868 Sunrise Way",
+      "city": null,
+      "state": "PA",
+      "zip": "18929",
+      "price": 600,
+      "beds": 3,
+      "baths": 2.5,
+      "sqft": 1500,
+      "dateAdded": "2026-02-20T00:04:10.320038",
+      "emailDate": "2026-02-20T01:30:53+00:00",
+      "viewed": false,
+      "url": "https://www.redfin.com/)",
+      "imageUrl": "https://ssl.cdn-redfin.com/vLATEST/images/email/savedSearch/bookmark-blue.png"
+    },
+    {
       "id": "Redfin_<0101019c7800a47e-448a42eb-6c1e-4025-8cca-7d7e47cf7db3-000000@us-west-2.amazonses.com>",
       "source": "Redfin",
       "address": "1107 Lansdale Ave",
@@ -156,5 +224,5 @@
       "zip": "19040"
     }
   ],
-  "lastScanned": "2026-02-19T18:04:09.118049"
+  "lastScanned": "2026-02-20T00:04:10.320184"
 }
