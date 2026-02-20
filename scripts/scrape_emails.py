@@ -139,6 +139,7 @@ def parse_address_from_subject(subject):
     # Pattern-based removal - very aggressive
     patterns_to_remove = [
         r'^Roci wants you to see the home at\s*',
+        r'^Roci wants you to see\s*',
         r'^New Listing:\s*',
         r'^Price Changed:\s*',
         r'^New home:\s*',
@@ -147,6 +148,7 @@ def parse_address_from_subject(subject):
         r'^For sale:\s*',
         r'^Just Listed:\s*',
         r'^Listing Alert:\s*',
+        r'^New property listed:\s*',
     ]
     
     for pattern in patterns_to_remove:
@@ -154,20 +156,24 @@ def parse_address_from_subject(subject):
     
     # Remove suffixes - more aggressive patterns
     # Match " - Redfin", "| Zillow", "Redfin" at end, etc.
-    clean = re.sub(r'\s*[-|]?\s*(?:Redfin|Zillow|Realtor|Trulia|Homes\.com|\.com).*$', '', clean, flags=re.IGNORECASE)
+    clean = re.sub(r'\s*[-|]?\s*(?:Redfin|Zillow|Realtor|Trulia|Homes\.com|Homes com|\.com).*$', '', clean, flags=re.IGNORECASE)
     
     # Remove any trailing punctuation
     clean = re.sub(r'[\-|\s]+$', '', clean)
     
-    # If it still contains email-like phrases, something went wrong
-    if 'wants you to see' in clean.lower() or 'new listing' in clean.lower():
-        # Try extracting just the part that looks like an address
-        # Look for pattern: number + street name
-        match = re.search(r'(\d+\s+[\w\s]+(?:Street|St|Avenue|Ave|Road|Rd|Boulevard|Blvd|Lane|Ln|Drive|Dr|Court|Ct|Way|Circle|Cir|Highway|Hwy|Parkway|Pkwy)\.?)', clean, re.IGNORECASE)
+    # If it still contains email-like phrases, try to extract just the street address
+    if any(phrase in clean.lower() for phrase in ['wants you to see', 'new listing', 'check out']):
+        # Look for pattern: number + street name (common street types)
+        match = re.search(r'(\d+\s+[\w\s]+?(?:Street|St|Avenue|Ave|Road|Rd|Boulevard|Blvd|Lane|Ln|Drive|Dr|Court|Ct|Way|Circle|Cir|Highway|Hwy|Parkway|Pkwy|Trail|Ter|Place|Pl)\.?)', clean, re.IGNORECASE)
         if match:
-            clean = match.group(1)
+            clean = match.group(1).strip()
     
-    return clean.strip()
+    # Final cleanup - remove any remaining URLs or email fragments
+    clean = re.sub(r'https?://\S+', '', clean)
+    clean = re.sub(r'www\.\S+', '', clean)
+    clean = clean.strip()
+    
+    return clean
 
 def parse_city_state_from_body(body, address):
     """Extract city, state, zip from email body"""
