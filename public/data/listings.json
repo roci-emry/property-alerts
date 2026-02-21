@@ -1,6 +1,23 @@
 {
   "listings": [
     {
+      "id": "Redfin_<0101019c7e0bdefc-e9d63460-7c58-4691-b6df-b7dc592e3ccd-000000@us-west-2.amazonses.com>",
+      "source": "Redfin",
+      "address": "Status change on 1107 Lansdale Ave",
+      "city": null,
+      "state": "PA",
+      "zip": "19446",
+      "price": 484999,
+      "beds": 3,
+      "baths": 2.0,
+      "sqft": 2314,
+      "dateAdded": "2026-02-21T00:04:14.382636",
+      "emailDate": "2026-02-21T02:33:53+00:00",
+      "viewed": false,
+      "url": "https://www.redfin.com/)",
+      "imageUrl": "https://www.redfin.com/stingray/do/api-get-listing-hero-shot/e5ad40dbbfc8bc4136c9d453fa697ee06ec31f033083f3669e0b6d170118c52c/209165189/heroshot_ghost_town_mapv2.jpg"
+    },
+    {
       "id": "Zillow_<33.03.52759.87B98996@i-0133196fd60e169a4.mta2vrest.sd.prd.sparkpost>",
       "source": "Zillow",
       "address": "11 Bogey Cir Doylestown, PA 18901. Your 'Roci House Search' search",
@@ -653,5 +670,5 @@
       "zip": "19040"
     }
   ],
-  "lastScanned": "2026-02-20T18:04:14.677178"
+  "lastScanned": "2026-02-21T00:04:14.382841"
 }
