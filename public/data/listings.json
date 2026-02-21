@@ -1,6 +1,57 @@
 {
   "listings": [
     {
+      "id": "Zillow_<E0.57.50857.1ED39996@i-028ca0114e96a28f8.mta2vrest.sd.prd.sparkpost>",
+      "source": "Zillow",
+      "address": "645 S Cannon Ave Lansdale, PA 19446. Your 'Roci House Search' search",
+      "city": null,
+      "state": "PA",
+      "zip": "19446",
+      "price": 489900,
+      "beds": 2522,
+      "baths": 2522.0,
+      "sqft": 1696,
+      "dateAdded": "2026-02-21T06:04:17.167056",
+      "emailDate": "2026-02-21T05:08:49+00:00",
+      "viewed": false,
+      "url": "https://www.zillow.com",
+      "imageUrl": "https://photos.zillowstatic.com/fp/fcce9c8e4fe8522ebcf927be6ec26b5a-zui_propcard_lg_1008_528.jpg"
+    },
+    {
+      "id": "Realtor.com_<20260221090551.1402993baefdf1e4@notifications.realtor.com>",
+      "source": "Realtor.com",
+      "address": "SOLD: 2142 Woodlawn Ave",
+      "city": "Glenside",
+      "state": "PA",
+      "zip": "19038",
+      "price": null,
+      "beds": 3,
+      "baths": 2.0,
+      "sqft": 1890,
+      "dateAdded": "2026-02-21T06:04:17.486071",
+      "emailDate": "2026-02-21T09:05:51+00:00",
+      "viewed": false,
+      "url": "https://www.realtor.com",
+      "imageUrl": "https://images.usw2.cordial.com/1946/118x74/slider.png"
+    },
+    {
+      "id": "Redfin_<0101019c7fae3956-52fedec0-7307-4636-8d95-1474faaccaf1-000000@us-west-2.amazonses.com>",
+      "source": "Redfin",
+      "address": "Contingent in Lansdale: 1107 Lansdale Ave and 7 more updates",
+      "city": "Glenside",
+      "state": "PA",
+      "zip": "19446",
+      "price": 600,
+      "beds": 3,
+      "baths": 2.0,
+      "sqft": 1500,
+      "dateAdded": "2026-02-21T06:04:17.778012",
+      "emailDate": "2026-02-21T10:10:50+00:00",
+      "viewed": false,
+      "url": "https://www.redfin.com/)",
+      "imageUrl": "https://ssl.cdn-redfin.com/vLATEST/images/email/savedSearch/bookmark-blue.png"
+    },
+    {
       "id": "Redfin_<0101019c7e0bdefc-e9d63460-7c58-4691-b6df-b7dc592e3ccd-000000@us-west-2.amazonses.com>",
       "source": "Redfin",
       "address": "Status change on 1107 Lansdale Ave",
@@ -670,5 +721,5 @@
       "zip": "19040"
     }
   ],
-  "lastScanned": "2026-02-21T00:04:14.382841"
+  "lastScanned": "2026-02-21T06:04:17.778298"
 }
