@@ -1,6 +1,40 @@
 {
   "listings": [
     {
+      "id": "Zillow_<20.F5.47427.42C0A996@i-02b9b333df612f091.mta2vrest.sd.prd.sparkpost>",
+      "source": "Zillow",
+      "address": "Price Cut: 329 N Tyson Ave, Glenside, PA 19038. Your 'Roci House Search' Search.",
+      "city": "Glenside",
+      "state": "PA",
+      "zip": "19038",
+      "price": 20000,
+      "beds": 2522,
+      "baths": 2522.0,
+      "sqft": 1644,
+      "dateAdded": "2026-02-21T18:04:15.234217",
+      "emailDate": "2026-02-21T19:48:52+00:00",
+      "viewed": false,
+      "url": "https://www.zillow.com",
+      "imageUrl": "https://photos.zillowstatic.com/fp/4c3711a6884151f6c7f28ff629751a8c-zui_propcard_lg_1008_528.jpg"
+    },
+    {
+      "id": "Realtor.com_<20260221210632.f746c0fabdf0e330@notifications.realtor.com>",
+      "source": "Realtor.com",
+      "address": "New Price Reduction: 329 N Tyson Ave",
+      "city": "Glenside",
+      "state": "PA",
+      "zip": "19038",
+      "price": 505000,
+      "beds": 3,
+      "baths": 2.0,
+      "sqft": 1644,
+      "dateAdded": "2026-02-21T18:04:15.479384",
+      "emailDate": "2026-02-21T21:06:32+00:00",
+      "viewed": false,
+      "url": "https://www.realtor.com",
+      "imageUrl": "https://images.usw2.cordial.com/1946/118x74/slider.png"
+    },
+    {
       "id": "Zillow_<B9.26.55836.513C9996@i-0c146699c2722b1a1.mta2vrest.sd.prd.sparkpost>",
       "source": "Zillow",
       "address": "Coming Soon: 717 Garfield Ave, Glenside, PA 19038. Your 'Roci House Search' Search.",
@@ -840,5 +874,5 @@
       "zip": "19040"
     }
   ],
-  "lastScanned": "2026-02-21T12:04:15.386159"
+  "lastScanned": "2026-02-21T18:04:15.479729"
 }
