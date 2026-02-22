@@ -1,6 +1,57 @@
 {
   "listings": [
     {
+      "id": "Homes.com_<1cafa4c2-129e-4263-bba8-271d1fe96d05@ind1s01mta1416.xt.local>",
+      "source": "Homes.com",
+      "address": "723 Kenmare Rd",
+      "city": null,
+      "state": "PA",
+      "zip": "19004",
+      "price": 568000,
+      "beds": 4,
+      "baths": 2.5,
+      "sqft": 1928,
+      "dateAdded": "2026-02-22T06:04:14.519367",
+      "emailDate": "2026-02-21T23:06:34-06:00",
+      "viewed": false,
+      "url": "https://www.homes.com/market/unsub/?t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvY2llbXJ5QGdtYWlsLmNvbSIsInZlciI6InYxIiwidXNlcl9rZXkiOiIycHA5eHg5IiwibmJmIjoxNzcxNzM2Nzc1LCJleHAiOjE4MDMyNzI3NzUsImlzcyI6Imh0dHBzOi8vd3d3LmhvbWVzLmNvbSJ9.Tof0euvkjwRN7rW6p7JPpTPI_LXn4eujtopDKPYWF5U&d=kx6yy2b&n=True&u=2pp9xx9",
+      "imageUrl": "https://image.email.homes.com/lib/fe3611727164047b701671/m/1/3891c7e9-2e06-42db-ad36-29d5aa0e904f.png"
+    },
+    {
+      "id": "Zillow_<92.89.11396.32F8A996@i-04b46109c2695afd0.mta2vrest.sd.prd.sparkpost>",
+      "source": "Zillow",
+      "address": "723 Kenmare Rd Bala Cynwyd, PA 19004. Your 'Roci House Search' search",
+      "city": null,
+      "state": "PA",
+      "zip": "19004",
+      "price": 568000,
+      "beds": 2522,
+      "baths": 2522.0,
+      "sqft": 1928,
+      "dateAdded": "2026-02-22T06:04:14.659326",
+      "emailDate": "2026-02-22T05:07:47+00:00",
+      "viewed": false,
+      "url": "https://www.zillow.com",
+      "imageUrl": "https://photos.zillowstatic.com/fp/04304b30513a198e09c66510761725bd-zui_propcard_lg_1008_528.jpg"
+    },
+    {
+      "id": "Redfin_<0101019c84d39dd9-b79c08ef-1907-410a-a166-f2d9891a13de-000000@us-west-2.amazonses.com>",
+      "source": "Redfin",
+      "address": "Contingent in Ardsley: 616 Tennis Ave and 1 more update",
+      "city": "Glenside",
+      "state": "PA",
+      "zip": "19038",
+      "price": 600,
+      "beds": 4,
+      "baths": 2.0,
+      "sqft": 1500,
+      "dateAdded": "2026-02-22T06:04:14.950051",
+      "emailDate": "2026-02-22T10:09:46+00:00",
+      "viewed": false,
+      "url": "https://www.redfin.com/)",
+      "imageUrl": "https://ssl.cdn-redfin.com/vLATEST/images/email/savedSearch/bookmark-blue.png"
+    },
+    {
       "id": "Zillow_<20.F5.47427.42C0A996@i-02b9b333df612f091.mta2vrest.sd.prd.sparkpost>",
       "source": "Zillow",
       "address": "Price Cut: 329 N Tyson Ave, Glenside, PA 19038. Your 'Roci House Search' Search.",
@@ -874,5 +925,5 @@
       "zip": "19040"
     }
   ],
-  "lastScanned": "2026-02-22T00:04:16.511300"
+  "lastScanned": "2026-02-22T06:04:14.950256"
 }
