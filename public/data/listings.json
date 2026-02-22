@@ -1,6 +1,40 @@
 {
   "listings": [
     {
+      "id": "Zillow_<98.CB.33279.1014B996@i-0b9ece6b7ddeb8a33.mta2vrest.sd.prd.sparkpost>",
+      "source": "Zillow",
+      "address": "1954 Coolidge Ave Willow Grove, PA 19090. Your 'Roci House Search' search",
+      "city": null,
+      "state": "PA",
+      "zip": "19090",
+      "price": 435000,
+      "beds": 2522,
+      "baths": 72.0,
+      "sqft": 1503,
+      "dateAdded": "2026-02-22T18:04:12.744735",
+      "emailDate": "2026-02-22T17:46:41+00:00",
+      "viewed": false,
+      "url": "https://www.zillow.com",
+      "imageUrl": "https://photos.zillowstatic.com/fp/3c0b241c63af930483095615f244c283-l_c.jpg"
+    },
+    {
+      "id": "Homes.com_<94838030-5d6d-4fc8-84d0-3f7d3a038f6d@ind1s01mta1415.xt.local>",
+      "source": "Homes.com",
+      "address": "1954 Coolidge Ave",
+      "city": null,
+      "state": "PA",
+      "zip": "19090",
+      "price": 435000,
+      "beds": 4,
+      "baths": 2.0,
+      "sqft": 1503,
+      "dateAdded": "2026-02-22T18:04:13.014128",
+      "emailDate": "2026-02-22T11:52:01-06:00",
+      "viewed": false,
+      "url": "https://www.homes.com/market/unsub/?t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvY2llbXJ5QGdtYWlsLmNvbSIsInZlciI6InYxIiwidXNlcl9rZXkiOiIycHA5eHg5IiwibmJmIjoxNzcxNzgyNzA3LCJleHAiOjE4MDMzMTg3MDcsImlzcyI6Imh0dHBzOi8vd3d3LmhvbWVzLmNvbSJ9.VTRyh4h6pR4UlBOAYJS59D4DZRRulkm6zyFDFi0Wp4g&d=kx6yy2b&n=True&u=2pp9xx9",
+      "imageUrl": "https://image.email.homes.com/lib/fe3611727164047b701671/m/1/3891c7e9-2e06-42db-ad36-29d5aa0e904f.png"
+    },
+    {
       "id": "Homes.com_<1cafa4c2-129e-4263-bba8-271d1fe96d05@ind1s01mta1416.xt.local>",
       "source": "Homes.com",
       "address": "723 Kenmare Rd",
@@ -925,5 +959,5 @@
       "zip": "19040"
     }
   ],
-  "lastScanned": "2026-02-22T12:04:12.608372"
+  "lastScanned": "2026-02-22T18:04:13.014390"
 }
