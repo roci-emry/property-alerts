@@ -1,6 +1,23 @@
 {
   "listings": [
     {
+      "id": "Zillow_<95.27.22055.0DB7B996@i-0f13f1d3b3e8d942d.mta2vrest.sd.prd.sparkpost>",
+      "source": "Zillow",
+      "address": "The most-searched cities on",
+      "city": null,
+      "state": "PA",
+      "zip": null,
+      "price": null,
+      "beds": null,
+      "baths": null,
+      "sqft": null,
+      "dateAdded": "2026-02-23T00:04:15.253120",
+      "emailDate": "2026-02-22T21:57:36+00:00",
+      "viewed": false,
+      "url": "https://www.zillow.com",
+      "imageUrl": "https://delivery.digitallibrary.zillowgroup.com/public/SZ_656x364_GettyImages-1987087979_2020x1136_jpg_Original.jpg"
+    },
+    {
       "id": "Zillow_<98.CB.33279.1014B996@i-0b9ece6b7ddeb8a33.mta2vrest.sd.prd.sparkpost>",
       "source": "Zillow",
       "address": "1954 Coolidge Ave Willow Grove, PA 19090. Your 'Roci House Search' search",
@@ -959,5 +976,5 @@
       "zip": "19040"
     }
   ],
-  "lastScanned": "2026-02-22T18:04:13.014390"
+  "lastScanned": "2026-02-23T00:04:15.368537"
 }
