@@ -1,6 +1,40 @@
 {
   "listings": [
     {
+      "id": "Homes.com_<6520ebd8-7fd8-49bf-9cb4-a7371e093fa3@ind1s01mta1414.xt.local>",
+      "source": "Homes.com",
+      "address": "221 S East",
+      "city": "Glenside",
+      "state": "PA",
+      "zip": "19038",
+      "price": 480000,
+      "beds": 3,
+      "baths": 2.5,
+      "sqft": 2420,
+      "dateAdded": "2026-02-23T06:04:13.611732",
+      "emailDate": "2026-02-22T23:07:16-06:00",
+      "viewed": false,
+      "url": "https://www.homes.com/market/unsub/?t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvY2llbXJ5QGdtYWlsLmNvbSIsInZlciI6InYxIiwidXNlcl9rZXkiOiIycHA5eHg5IiwibmJmIjoxNzcxODIzMTk4LCJleHAiOjE4MDMzNTkxOTgsImlzcyI6Imh0dHBzOi8vd3d3LmhvbWVzLmNvbSJ9.i2PCx9DdfnGEnIjb_7Og9vT3XapPLklnf1C6lMOGjeI&d=kx6yy2b&n=True&u=2pp9xx9",
+      "imageUrl": "https://image.email.homes.com/lib/fe3611727164047b701671/m/1/3891c7e9-2e06-42db-ad36-29d5aa0e904f.png"
+    },
+    {
+      "id": "Zillow_<AF.26.32408.390EB996@i-04aa6c48bcc368637.mta2vrest.sd.prd.sparkpost>",
+      "source": "Zillow",
+      "address": "221 S Easton Rd Glenside, PA 19038. Your 'Roci House Search' search",
+      "city": "Glenside",
+      "state": "PA",
+      "zip": "19038",
+      "price": 480000,
+      "beds": 2522,
+      "baths": 2522.0,
+      "sqft": 2420,
+      "dateAdded": "2026-02-23T06:04:13.743092",
+      "emailDate": "2026-02-23T05:07:31+00:00",
+      "viewed": false,
+      "url": "https://www.zillow.com",
+      "imageUrl": "https://photos.zillowstatic.com/fp/8862c5f44443befd97ac2ce4cfbd0c7b-zui_propcard_lg_1008_528.jpg"
+    },
+    {
       "id": "Zillow_<95.27.22055.0DB7B996@i-0f13f1d3b3e8d942d.mta2vrest.sd.prd.sparkpost>",
       "source": "Zillow",
       "address": "The most-searched cities on",
@@ -976,5 +1010,5 @@
       "zip": "19040"
     }
   ],
-  "lastScanned": "2026-02-23T00:04:15.368537"
+  "lastScanned": "2026-02-23T06:04:13.913495"
 }
