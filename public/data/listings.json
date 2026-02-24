@@ -1,6 +1,40 @@
 {
   "listings": [
     {
+      "id": "Redfin_<0101019c913d9b66-38a6feb7-dd32-4026-8d6a-c813a7165db7-000000@us-west-2.amazonses.com>",
+      "source": "Redfin",
+      "address": "1567 Lindbergh Ave is waiting for you",
+      "city": null,
+      "state": "PA",
+      "zip": "19001",
+      "price": 495000,
+      "beds": 4,
+      "baths": 2.0,
+      "sqft": 1998,
+      "dateAdded": "2026-02-24T18:04:24.586881",
+      "emailDate": "2026-02-24T20:00:59+00:00",
+      "viewed": false,
+      "url": "https://www.redfin.com/PA/Abington/1567-Lindbergh-Ave-19001/home/38228305?utm_channel=img",
+      "imageUrl": "https://www.redfin.com/stingray/do/api-get-listing-hero-shot/0b8fe52e9a8e4cb094acb424e4644cd570e2686338301587a1a0f208172a8b07/212259443/heroshot_ghost_town_sash_mkting.jpg"
+    },
+    {
+      "id": "Homes.com_<925d285e-c86f-45a5-9c1a-ca3fe416bac8@ind1s01mta1418.xt.local>",
+      "source": "Homes.com",
+      "address": "Price Increase for 26 Atkins Dr - Update in Roci House Search",
+      "city": null,
+      "state": "PA",
+      "zip": "19405",
+      "price": 579999,
+      "beds": 4,
+      "baths": 5.0,
+      "sqft": 2060,
+      "dateAdded": "2026-02-24T18:04:24.770359",
+      "emailDate": "2026-02-24T14:16:58-06:00",
+      "viewed": false,
+      "url": "https://www.homes.com/market/unsub/?t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvY2llbXJ5QGdtYWlsLmNvbSIsInZlciI6InYxIiwidXNlcl9rZXkiOiIycHA5eHg5IiwibmJmIjoxNzcxOTY0MjA4LCJleHAiOjE4MDM1MDAyMDgsImlzcyI6Imh0dHBzOi8vd3d3LmhvbWVzLmNvbSJ9.HaKAzH8eLEY9mDhs8V90QCqrcJwaxq2osLi0z0gm0Yo&d=kx6yy2b&n=True&u=2pp9xx9",
+      "imageUrl": "https://image.email.homes.com/lib/fe3611727164047b701671/m/1/3891c7e9-2e06-42db-ad36-29d5aa0e904f.png"
+    },
+    {
       "id": "Homes.com_<04fa1027-683d-4d78-bef3-8137b015b2b5@ind1s01mta1414.xt.local>",
       "source": "Homes.com",
       "address": "With Homes Ai, Instantly View The Room You Want",
@@ -1214,5 +1248,5 @@
       "zip": "19040"
     }
   ],
-  "lastScanned": "2026-02-24T12:04:32.685406"
+  "lastScanned": "2026-02-24T18:04:24.770638"
 }
