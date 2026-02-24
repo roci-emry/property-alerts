@@ -1,6 +1,40 @@
 {
   "listings": [
     {
+      "id": "Zillow_<10.90.08305.1323D996@i-09ba5a1d0b56cd796.mta2vrest.sd.prd.sparkpost>",
+      "source": "Zillow",
+      "address": "106 Donna Dr Plymouth Meeting, PA 19462. Your 'Roci House Search' search",
+      "city": "Plymouth Meeting",
+      "state": "PA",
+      "zip": "19462",
+      "price": 570000,
+      "beds": 2522,
+      "baths": 2522.0,
+      "sqft": 2333,
+      "dateAdded": "2026-02-24T06:04:21.148082",
+      "emailDate": "2026-02-24T05:08:01+00:00",
+      "viewed": false,
+      "url": "https://www.zillow.com",
+      "imageUrl": "https://photos.zillowstatic.com/fp/8162c77e2797b3eaf196cefeee89b12c-zui_propcard_lg_1008_528.jpg"
+    },
+    {
+      "id": "Redfin_<0101019c8f20d1fd-f57dfb60-9cbe-47f5-b5ac-042648a67b85-000000@us-west-2.amazonses.com>",
+      "source": "Redfin",
+      "address": "Back on market in Glenside: 461 Hamel Ave and 6 more updates",
+      "city": "Glenside",
+      "state": "PA",
+      "zip": "19038",
+      "price": 600,
+      "beds": 4,
+      "baths": 2.5,
+      "sqft": 1500,
+      "dateAdded": "2026-02-24T06:04:21.474046",
+      "emailDate": "2026-02-24T10:10:18+00:00",
+      "viewed": false,
+      "url": "https://www.redfin.com/)",
+      "imageUrl": "https://ssl.cdn-redfin.com/vLATEST/images/email/savedSearch/bookmark-blue.png"
+    },
+    {
       "id": "Redfin_<0101019c8bc78d65-603d4f64-c00a-4275-b5b7-89fd0fbc80cd-000000@us-west-2.amazonses.com>",
       "source": "Redfin",
       "address": "Price increase to $415K on 4 Beaver Hill Rd",
@@ -1163,5 +1197,5 @@
       "zip": "19040"
     }
   ],
-  "lastScanned": "2026-02-24T00:04:22.705736"
+  "lastScanned": "2026-02-24T06:04:21.474249"
 }
