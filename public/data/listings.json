@@ -1,6 +1,23 @@
 {
   "listings": [
     {
+      "id": "Homes.com_<04fa1027-683d-4d78-bef3-8137b015b2b5@ind1s01mta1414.xt.local>",
+      "source": "Homes.com",
+      "address": "With Homes Ai, Instantly View The Room You Want",
+      "city": null,
+      "state": "PA",
+      "zip": null,
+      "price": null,
+      "beds": 5,
+      "baths": 1.0,
+      "sqft": null,
+      "dateAdded": "2026-02-24T12:04:31.988017",
+      "emailDate": "2026-02-24T08:01:25-06:00",
+      "viewed": false,
+      "url": "https://www.homes.com",
+      "imageUrl": "https://image.email.homes.com/lib/fe3611727164047b701671/m/1/3891c7e9-2e06-42db-ad36-29d5aa0e904f.png"
+    },
+    {
       "id": "Zillow_<10.90.08305.1323D996@i-09ba5a1d0b56cd796.mta2vrest.sd.prd.sparkpost>",
       "source": "Zillow",
       "address": "106 Donna Dr Plymouth Meeting, PA 19462. Your 'Roci House Search' search",
@@ -1197,5 +1214,5 @@
       "zip": "19040"
     }
   ],
-  "lastScanned": "2026-02-24T06:04:21.474249"
+  "lastScanned": "2026-02-24T12:04:32.685406"
 }
