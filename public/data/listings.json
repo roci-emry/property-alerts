@@ -1,6 +1,23 @@
 {
   "listings": [
     {
+      "id": "Redfin_<0101019c944a18a6-b5dbf298-11c0-4484-b4ea-6f1ba429ae42-000000@us-west-2.amazonses.com>",
+      "source": "Redfin",
+      "address": "Pending in Warrington: 843 Geranium Dr and 5 more updates",
+      "city": "Plymouth Meeting",
+      "state": "PA",
+      "zip": "18976",
+      "price": 600,
+      "beds": 3,
+      "baths": 3.0,
+      "sqft": 1500,
+      "dateAdded": "2026-02-25T06:04:24.862689",
+      "emailDate": "2026-02-25T10:13:29+00:00",
+      "viewed": false,
+      "url": "https://www.redfin.com/)",
+      "imageUrl": "https://ssl.cdn-redfin.com/vLATEST/images/email/savedSearch/bookmark-blue.png"
+    },
+    {
       "id": "Zillow_<46.18.11435.B203E996@i-05087933941838125.mta2vrest.sd.prd.sparkpost>",
       "source": "Zillow",
       "address": "Coming Soon: 637 Dayton Rd, Bryn Mawr, PA 19010. Your 'Roci House Search' Search.",
@@ -1299,5 +1316,5 @@
       "zip": "19040"
     }
   ],
-  "lastScanned": "2026-02-25T00:04:23.735233"
+  "lastScanned": "2026-02-25T06:04:24.862898"
 }
