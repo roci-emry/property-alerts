@@ -1,6 +1,40 @@
 {
   "listings": [
     {
+      "id": "Realtor.com_<20260225214132.be3408620231032a@notifications.realtor.com>",
+      "source": "Realtor.com",
+      "address": "128 Krist",
+      "city": null,
+      "state": "PA",
+      "zip": "18914",
+      "price": 389999,
+      "beds": 3,
+      "baths": 1.5,
+      "sqft": 1540,
+      "dateAdded": "2026-02-25T18:04:21.131097",
+      "emailDate": "2026-02-25T21:41:32+00:00",
+      "viewed": false,
+      "url": "https://www.realtor.com",
+      "imageUrl": "https://images.usw2.cordial.com/1946/118x74/slider.png"
+    },
+    {
+      "id": "Realtor.com_<20260225224211.b131f694f6a43d9d@notifications.realtor.com>",
+      "source": "Realtor.com",
+      "address": "128 Pleasant Rd",
+      "city": "Plymouth Meeting",
+      "state": "PA",
+      "zip": "19462",
+      "price": 519900,
+      "beds": 3,
+      "baths": 2.0,
+      "sqft": 1742,
+      "dateAdded": "2026-02-25T18:04:21.334110",
+      "emailDate": "2026-02-25T22:42:11+00:00",
+      "viewed": false,
+      "url": "https://www.realtor.com",
+      "imageUrl": "https://images.usw2.cordial.com/1946/118x74/slider.png"
+    },
+    {
       "id": "Homes.com_<8748f924-bb31-4f45-9d36-24548557e9d7@ind1s01mta1418.xt.local>",
       "source": "Homes.com",
       "address": "Back on Market for 1450 Pepper Rd - Update in Roci House Search",
@@ -1367,5 +1401,5 @@
       "zip": "19040"
     }
   ],
-  "lastScanned": "2026-02-25T12:04:17.518277"
+  "lastScanned": "2026-02-25T18:04:21.334346"
 }
