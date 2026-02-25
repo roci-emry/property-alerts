@@ -1,6 +1,57 @@
 {
   "listings": [
     {
+      "id": "Homes.com_<8748f924-bb31-4f45-9d36-24548557e9d7@ind1s01mta1418.xt.local>",
+      "source": "Homes.com",
+      "address": "Back on Market for 1450 Pepper Rd - Update in Roci House Search",
+      "city": null,
+      "state": "PA",
+      "zip": "19046",
+      "price": 599900,
+      "beds": 3,
+      "baths": 3.0,
+      "sqft": 2748,
+      "dateAdded": "2026-02-25T12:04:16.406911",
+      "emailDate": "2026-02-25T10:09:18-06:00",
+      "viewed": false,
+      "url": "https://www.homes.com/market/unsub/?t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvY2llbXJ5QGdtYWlsLmNvbSIsInZlciI6InYxIiwidXNlcl9rZXkiOiIycHA5eHg5IiwibmJmIjoxNzcyMDM1NzQ5LCJleHAiOjE4MDM1NzE3NDksImlzcyI6Imh0dHBzOi8vd3d3LmhvbWVzLmNvbSJ9.EXY5RbjmFeUVtOedINmQ-cuXZVE7XBzzcmvG_YlfFnw&d=kx6yy2b&n=True&u=2pp9xx9",
+      "imageUrl": "https://image.email.homes.com/lib/fe3611727164047b701671/m/1/3891c7e9-2e06-42db-ad36-29d5aa0e904f.png"
+    },
+    {
+      "id": "Zillow_<46.81.47427.F1F1F996@i-02b9b333df612f091.mta2vrest.sd.prd.sparkpost>",
+      "source": "Zillow",
+      "address": "Coming Soon: 741 John Hancock Rd, King Of Prussia, PA 19406. Your 'Roci House Search' Search.",
+      "city": null,
+      "state": "PA",
+      "zip": "19406",
+      "price": 600000,
+      "beds": 2522,
+      "baths": 2522.0,
+      "sqft": 1864,
+      "dateAdded": "2026-02-25T12:04:16.978867",
+      "emailDate": "2026-02-25T16:11:11+00:00",
+      "viewed": false,
+      "url": "https://www.zillow.com",
+      "imageUrl": "https://photos.zillowstatic.com/fp/07f42258a60b1f0ee6ada2f51c49229b-zui_propcard_lg_1008_528.jpg"
+    },
+    {
+      "id": "Homes.com_<8a3918b6-7e1c-4ac0-bea0-4f2c06aa472d@ind1s01mta1416.xt.local>",
+      "source": "Homes.com",
+      "address": "Coming Soon for 741 John Hancock Rd - Update in Roci House Search",
+      "city": null,
+      "state": "PA",
+      "zip": "19406",
+      "price": 600000,
+      "beds": 4,
+      "baths": 2.5,
+      "sqft": 1864,
+      "dateAdded": "2026-02-25T12:04:17.187119",
+      "emailDate": "2026-02-25T10:11:13-06:00",
+      "viewed": false,
+      "url": "https://www.homes.com/market/unsub/?t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvY2llbXJ5QGdtYWlsLmNvbSIsInZlciI6InYxIiwidXNlcl9rZXkiOiIycHA5eHg5IiwibmJmIjoxNzcyMDM1ODY1LCJleHAiOjE4MDM1NzE4NjUsImlzcyI6Imh0dHBzOi8vd3d3LmhvbWVzLmNvbSJ9.ZS0Tj1J4e_HrkYDD-HoroI6mIsFcWMi0zn54Npwg4J0&d=kx6yy2b&n=True&u=2pp9xx9",
+      "imageUrl": "https://image.email.homes.com/lib/fe3611727164047b701671/m/1/3891c7e9-2e06-42db-ad36-29d5aa0e904f.png"
+    },
+    {
       "id": "Redfin_<0101019c944a18a6-b5dbf298-11c0-4484-b4ea-6f1ba429ae42-000000@us-west-2.amazonses.com>",
       "source": "Redfin",
       "address": "Pending in Warrington: 843 Geranium Dr and 5 more updates",
@@ -1316,5 +1367,5 @@
       "zip": "19040"
     }
   ],
-  "lastScanned": "2026-02-25T06:04:24.862898"
+  "lastScanned": "2026-02-25T12:04:17.518277"
 }
