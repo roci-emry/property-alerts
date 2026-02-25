@@ -1,6 +1,57 @@
 {
   "listings": [
     {
+      "id": "Zillow_<46.18.11435.B203E996@i-05087933941838125.mta2vrest.sd.prd.sparkpost>",
+      "source": "Zillow",
+      "address": "Coming Soon: 637 Dayton Rd, Bryn Mawr, PA 19010. Your 'Roci House Search' Search.",
+      "city": "Bryn Mawr",
+      "state": "PA",
+      "zip": "19010",
+      "price": 445000,
+      "beds": 2522,
+      "baths": 31.0,
+      "sqft": 1630,
+      "dateAdded": "2026-02-25T00:04:23.428794",
+      "emailDate": "2026-02-24T23:11:39+00:00",
+      "viewed": false,
+      "url": "https://www.zillow.com",
+      "imageUrl": "https://photos.zillowstatic.com/fp/3c0b241c63af930483095615f244c283-l_c.jpg"
+    },
+    {
+      "id": "Realtor.com_<20260224231934.9ddb58a912b15dc3@notifications.realtor.com>",
+      "source": "Realtor.com",
+      "address": "637 Dayton Rd",
+      "city": "Bryn Mawr",
+      "state": "PA",
+      "zip": "19010",
+      "price": 445000,
+      "beds": 3,
+      "baths": 2.0,
+      "sqft": 1630,
+      "dateAdded": "2026-02-25T00:04:23.575203",
+      "emailDate": "2026-02-24T23:19:34+00:00",
+      "viewed": false,
+      "url": "https://www.realtor.com",
+      "imageUrl": "https://images.usw2.cordial.com/1946/118x74/slider.png"
+    },
+    {
+      "id": "Homes.com_<429a90b9-7e08-47ad-8afa-ef1a8788c1ec@ind1s01mta1417.xt.local>",
+      "source": "Homes.com",
+      "address": "Price Increase for 786 Boxwood Dr - Update in Roci House Search",
+      "city": null,
+      "state": "PA",
+      "zip": "18974",
+      "price": 584900,
+      "beds": 4,
+      "baths": 2.5,
+      "sqft": 2427,
+      "dateAdded": "2026-02-25T00:04:23.734974",
+      "emailDate": "2026-02-24T18:24:31-06:00",
+      "viewed": false,
+      "url": "https://www.homes.com/market/unsub/?t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvY2llbXJ5QGdtYWlsLmNvbSIsInZlciI6InYxIiwidXNlcl9rZXkiOiIycHA5eHg5IiwibmJmIjoxNzcxOTc5MDU5LCJleHAiOjE4MDM1MTUwNTksImlzcyI6Imh0dHBzOi8vd3d3LmhvbWVzLmNvbSJ9.5wuaR-hTY6NNDRT5VeGNVoPntig8tm3UHkpfQychSYs&d=kx6yy2b&n=True&u=2pp9xx9",
+      "imageUrl": "https://image.email.homes.com/lib/fe3611727164047b701671/m/1/3891c7e9-2e06-42db-ad36-29d5aa0e904f.png"
+    },
+    {
       "id": "Redfin_<0101019c913d9b66-38a6feb7-dd32-4026-8d6a-c813a7165db7-000000@us-west-2.amazonses.com>",
       "source": "Redfin",
       "address": "1567 Lindbergh Ave is waiting for you",
@@ -1248,5 +1299,5 @@
       "zip": "19040"
     }
   ],
-  "lastScanned": "2026-02-24T18:04:24.770638"
+  "lastScanned": "2026-02-25T00:04:23.735233"
 }
