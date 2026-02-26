@@ -1,6 +1,40 @@
 {
   "listings": [
     {
+      "id": "Zillow_<16.E8.00662.A4570A96@i-0928121cf6cc29c32.mta2vrest.sd.prd.sparkpost>",
+      "source": "Zillow",
+      "address": "Coming Soon: 217 Jonathan Dr, North Wales, PA 19454. Your 'Roci House Search' Search.",
+      "city": "North Wales",
+      "state": "PA",
+      "zip": "19454",
+      "price": 465000,
+      "beds": 2522,
+      "baths": 2522.0,
+      "sqft": 1693,
+      "dateAdded": "2026-02-26T12:04:32.982104",
+      "emailDate": "2026-02-26T16:31:06+00:00",
+      "viewed": false,
+      "url": "https://www.zillow.com",
+      "imageUrl": "https://photos.zillowstatic.com/fp/8d56cb256169671bd0c3ffe6c88bab6f-zui_propcard_lg_1008_528.jpg"
+    },
+    {
+      "id": "Homes.com_<889bc7fb-a082-4f25-9ee0-67e5a907cf77@ind1s01mta1417.xt.local>",
+      "source": "Homes.com",
+      "address": "Coming Soon for 217 Jonathan Dr - Update in Roci House Search",
+      "city": "North Wales",
+      "state": "PA",
+      "zip": "19454",
+      "price": 465000,
+      "beds": 3,
+      "baths": 2.5,
+      "sqft": 1693,
+      "dateAdded": "2026-02-26T12:04:33.363991",
+      "emailDate": "2026-02-26T10:36:31-06:00",
+      "viewed": false,
+      "url": "https://www.homes.com/market/unsub/?t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvY2llbXJ5QGdtYWlsLmNvbSIsInZlciI6InYxIiwidXNlcl9rZXkiOiIycHA5eHg5IiwibmJmIjoxNzcyMTIzNzc1LCJleHAiOjE4MDM2NTk3NzUsImlzcyI6Imh0dHBzOi8vd3d3LmhvbWVzLmNvbSJ9.bx2XcksJ9sAAaMUj92AgNevBsj2sB6w3-VMhMra5ZuM&d=kx6yy2b&n=True&u=2pp9xx9",
+      "imageUrl": "https://image.email.homes.com/lib/fe3611727164047b701671/m/1/3891c7e9-2e06-42db-ad36-29d5aa0e904f.png"
+    },
+    {
       "id": "Zillow_<0D.44.05823.D15DF996@i-08e555c51d5bf18ce.mta2vrest.sd.prd.sparkpost>",
       "source": "Zillow",
       "address": "717 Garfield Ave Glenside, PA 19038. Your 'Roci House Search' search",
@@ -1520,5 +1554,5 @@
       "zip": "19040"
     }
   ],
-  "lastScanned": "2026-02-26T06:04:28.545089"
+  "lastScanned": "2026-02-26T12:04:33.364247"
 }
