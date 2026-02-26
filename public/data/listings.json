@@ -1,6 +1,23 @@
 {
   "listings": [
     {
+      "id": "Homes.com_<beb54d95-b620-48d9-8f98-a7eabb5f1fb5@ind1s01mta1414.xt.local>",
+      "source": "Homes.com",
+      "address": "201 Coventry Rd",
+      "city": null,
+      "state": "PA",
+      "zip": "18914",
+      "price": 529900,
+      "beds": 3,
+      "baths": 2.5,
+      "sqft": 2174,
+      "dateAdded": "2026-02-26T00:04:18.659810",
+      "emailDate": "2026-02-25T20:47:36-06:00",
+      "viewed": false,
+      "url": "https://www.homes.com/market/unsub/?t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvY2llbXJ5QGdtYWlsLmNvbSIsInZlciI6InYxIiwidXNlcl9rZXkiOiIycHA5eHg5IiwibmJmIjoxNzcyMDc0MDQ4LCJleHAiOjE4MDM2MTAwNDgsImlzcyI6Imh0dHBzOi8vd3d3LmhvbWVzLmNvbSJ9.8m5mrNZ1FP5-qEpiNAcZLqdeS8SuteQI8uAdNxZv9Ig&d=kx6yy2b&n=True&u=2pp9xx9",
+      "imageUrl": "https://image.email.homes.com/lib/fe3611727164047b701671/m/1/3891c7e9-2e06-42db-ad36-29d5aa0e904f.png"
+    },
+    {
       "id": "Realtor.com_<20260225214132.be3408620231032a@notifications.realtor.com>",
       "source": "Realtor.com",
       "address": "128 Krist",
@@ -1401,5 +1418,5 @@
       "zip": "19040"
     }
   ],
-  "lastScanned": "2026-02-25T18:04:21.334346"
+  "lastScanned": "2026-02-26T00:04:18.660097"
 }
