@@ -1,6 +1,23 @@
 {
   "listings": [
     {
+      "id": "Realtor.com_<20260228064144.1c813e9e019a21f3@notifications.realtor.com>",
+      "source": "Realtor.com",
+      "address": "SOLD: 2400 Edge Hill Rd",
+      "city": "Glenside",
+      "state": "PA",
+      "zip": "19006",
+      "price": 505000,
+      "beds": 3,
+      "baths": 1.5,
+      "sqft": 1660,
+      "dateAdded": "2026-02-28T06:04:25.143112",
+      "emailDate": "2026-02-28T06:41:44+00:00",
+      "viewed": false,
+      "url": "https://www.realtor.com",
+      "imageUrl": "https://images.usw2.cordial.com/1946/118x74/slider.png"
+    },
+    {
       "id": "Zillow_<E4.FB.02146.441F1A96@i-0dbf388408a6db525.mta2vrest.sd.prd.sparkpost>",
       "source": "Zillow",
       "address": "358 Oak Rd Glenside, PA 19038. Your 'Roci House Search' search",
@@ -1682,24 +1699,7 @@
       "viewed": false,
       "url": "https://www.zillow.com/homes/791-Griffiths-Rd_rb/",
       "imageUrl": "https://image.email.homes.com/lib/fe3611727164047b701671/m/1/3891c7e9-2e06-42db-ad36-29d5aa0e904f.png"
-    },
-    {
-      "id": "Zillow_<17.FE.13694.73CE7996@i-0f6016afbd7659ccd.mta2vrest.sd.prd.sparkpost>",
-      "source": "Zillow",
-      "address": "4 Knox Ct Chesterbrook, PA 19087. Your 'Roci House Search' search",
-      "city": null,
-      "state": "PA",
-      "zip": "19087",
-      "price": 600000,
-      "beds": 2522,
-      "baths": 2522.0,
-      "sqft": 2166,
-      "dateAdded": "2026-02-20T06:04:10.744436",
-      "emailDate": "2026-02-20T05:08:07+00:00",
-      "viewed": false,
-      "url": "https://www.zillow.com/homes/4-Knox-Ct-Chesterbrook-PA-19087.-Your-'Roci-House-Search'-search_rb/",
-      "imageUrl": "https://photos.zillowstatic.com/fp/970b1b40abfc432e0bc2fc625ff46334-zui_propcard_lg_1008_528.jpg"
     }
   ],
-  "lastScanned": "2026-02-28T00:04:18.172727"
+  "lastScanned": "2026-02-28T06:04:25.438935"
 }
