@@ -1,6 +1,23 @@
 {
   "listings": [
     {
+      "id": "Zillow_<05.91.65372.0E9C3A96@i-0c146699c2722b1a1.mta2vrest.sd.prd.sparkpost>",
+      "source": "Zillow",
+      "address": "New For Sale: 848 Sunnylea Rd, Lansdale, PA 19446",
+      "city": null,
+      "state": "PA",
+      "zip": null,
+      "price": 399000,
+      "beds": 4,
+      "baths": 2.0,
+      "sqft": 2096,
+      "dateAdded": "2026-03-01T06:04:24.404037",
+      "emailDate": "2026-03-01T05:08:48+00:00",
+      "viewed": false,
+      "url": "https://www.zillow.com",
+      "imageUrl": "https://photos.zillowstatic.com/fp/d88cdf7ca79522bc1d67b48d7a75945b-p_e.jpg"
+    },
+    {
       "id": "Homes.com_<c8e9feeb-cd0d-4448-a807-45a5331a27d6@ind1s01mta1414.xt.local>",
       "source": "Homes.com",
       "address": "Price Increase for 33 E Front St - Update in Roci House Search",
@@ -1682,24 +1699,7 @@
       "viewed": false,
       "url": "https://www.zillow.com/homes/Coming-Soon:-2212-Lantern-Ln-Lafayette-Hill-PA-19444.-Your-'Roci-House-Search'-Search._rb/",
       "imageUrl": "https://photos.zillowstatic.com/fp/3c0b241c63af930483095615f244c283-l_c.jpg"
-    },
-    {
-      "id": "Homes.com_<a2246c06-0fd1-4660-9ccb-f3b425fac2b6@ind1s01mta1416.xt.local>",
-      "source": "Homes.com",
-      "address": "4 Knox Ct",
-      "city": null,
-      "state": "PA",
-      "zip": "19087",
-      "price": 600000,
-      "beds": 2,
-      "baths": 5.0,
-      "sqft": 2166,
-      "dateAdded": "2026-02-20T09:03:03.567654",
-      "emailDate": "2026-02-19T23:07:25-06:00",
-      "viewed": false,
-      "url": "https://www.homes.com/market/unsub/?t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvY2llbXJ5QGdtYWlsLmNvbSIsInZlciI6InYxIiwidXNlcl9rZXkiOiIycHA5eHg5IiwibmJmIjoxNzcxNTY0MDMwLCJleHAiOjE4MDMxMDAwMzAsImlzcyI6Imh0dHBzOi8vd3d3LmhvbWVzLmNvbSJ9.0HdieNvUZdG2rArvEXKHeu_IPxfXhp7HYKuKJ_qdfJA&d=kx6yy2b&n=True&u=2pp9xx9",
-      "imageUrl": "https://image.email.homes.com/lib/fe3611727164047b701671/m/1/3891c7e9-2e06-42db-ad36-29d5aa0e904f.png"
     }
   ],
-  "lastScanned": "2026-03-01T00:04:25.882731"
+  "lastScanned": "2026-03-01T06:04:24.732785"
 }
